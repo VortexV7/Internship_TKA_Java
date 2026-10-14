@@ -1,21 +1,23 @@
-
 public class ShoppingBill {
 
     static double electronics(double a, double b) {
         double total = a + b;
         double gst = total * 18 / 100;
-        return total + gst;
+        double bill = total + gst;
+        return bill;
     }
 
     static double fashion(double a, double b) {
         double total = a + b;
         double gst = total * 13 / 100;
-        return total + gst;
+        double bill = total + gst;
+        return bill;
     }
 
     static double food(double a) {
         double gst = a * 7 / 100;
-        return a + gst;
+        double bill = a + gst;
+        return bill;
     }
 
     public static void main(String[] args) {
@@ -25,15 +27,12 @@ public class ShoppingBill {
         double f2 = 100;
         double fd = 100;
 
-        double total = electronics(e1, e2)
-                     + fashion(f1, f2)
-                     + food(fd);
-
+        double total = electronics(e1, e2) + fashion(f1, f2) + food(fd);
         double discount = total * 20 / 100;
         double finalAmount = total - discount;
 
-        System.out.printf("Total after GST = %.2f%n", total);
-        System.out.printf("Discount = %.2f%n", discount);
-        System.out.printf("Final payable amount = %.2f%n", finalAmount);
+        System.out.println("Total after GST = " + total);
+        System.out.println("Discount = " + discount);
+        System.out.println("Final payable amount = " + finalAmount);
     }
 }
