@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Employee Details</h2>
+
+ID: <input type="number" id="id"><br><br>
+Name: <input type="text" id="name"><br><br>
+Role: <input type="text" id="role"><br><br>
+Salary: <input type="number" id="salary"><br><br>
+
+<button onclick="addEmployee()">Submit Employee</button>
+
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Salary</th>
+    </tr>
+    <tbody id="table"></tbody>
+</table>
+
+<script>
+function addEmployee() {
+    var id = document.getElementById("id").value;
+    var name = document.getElementById("name").value;
+    var role = document.getElementById("role").value;
+    var salary = document.getElementById("salary").value;
+
+    document.getElementById("table").innerHTML +=
+        "<tr><td>" + id + "</td><td>" + name +
+        "</td><td>" + role + "</td><td>" + salary +
+        "</td></tr>";
+}
+</script>
+
+</body>
+</html>
