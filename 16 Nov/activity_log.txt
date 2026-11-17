@@ -1,0 +1,9 @@
+2026-02-10 09:00:00 | Candidate Created: CAN-2026-0001
+2026-02-10 09:05:00 | Job Created: JOB-2026-001
+2026-02-10 09:10:00 | Candidate Created: CAN-2026-0002
+2026-02-11 10:15:00 | Application Created: APP-2026-0001
+2026-02-11 10:15:00 | Eligibility Checked: APP-2026-0001 - ELIGIBLE
+2026-02-12 11:00:00 | Candidate Shortlisted: APP-2026-0001
+2026-02-13 14:30:00 | Interview Scheduled: APP-2026-0001 Round 1
+2026-02-14 16:00:00 | Offer Created: OFF-2026-001
+2026-02-15 10:00:00 | Placement Created: CAN-2026-0006 - TCS

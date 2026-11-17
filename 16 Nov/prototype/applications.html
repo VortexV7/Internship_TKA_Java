@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Applications — RecruitPlace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar-backdrop hidden" id="sidebar-backdrop"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo-mark">RP</div><div><h1>RecruitPlace</h1><small>Placement Cell</small></div></div>
+  <nav class="nav">
+    <a href="index.html" data-page="index.html"><span class="ico">▦</span> Dashboard</a>
+    <a href="candidates.html" data-page="candidates.html"><span class="ico">👤</span> Candidates</a>
+    <a href="companies.html" data-page="companies.html"><span class="ico">🏢</span> Companies</a>
+    <a href="jobs.html" data-page="jobs.html"><span class="ico">💼</span> Jobs</a>
+    <a href="applications.html" data-page="applications.html"><span class="ico">📄</span> Applications</a>
+    <a href="interviews.html" data-page="interviews.html"><span class="ico">🎙</span> Interviews</a>
+    <a href="offers.html" data-page="offers.html"><span class="ico">✉</span> Offers</a>
+    <a href="placements.html" data-page="placements.html"><span class="ico">🎓</span> Placements</a>
+    <a href="reports.html" data-page="reports.html"><span class="ico">📊</span> Reports</a>
+  </nav>
+  <div class="sidebar-user"><div class="avatar">PO</div><div class="who"><strong>Placement Officer</strong><span>placement@college.edu</span></div><a class="logout" href="login.html">Logout</a></div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    <h2>Applications</h2><div class="spacer"></div>
+    <label class="search"><span aria-hidden="true">🔍</span><input type="search" placeholder="Search applications…" data-filter aria-label="Search applications"></label>
+    <a class="btn btn-amber" href="candidates.html"><span>＋</span> <span class="btn-label">New Candidate</span></a>
+  </header>
+  <main class="content">
+    <p class="page-sub">45 applications in this drive — showing 15 below. Eligibility is checked against the job's minimum %, passing year and backlog limit.</p>
+    <div class="toolbar">
+      <input class="filter-input" type="search" placeholder="Filter by candidate, job or company…" data-filter data-filter-target="#apps-table tbody" aria-label="Filter applications">
+      <div class="chips" data-chip-group data-chip-target="#apps-table tbody">
+        <button type="button" class="chip active" data-filter-value="all">All</button>
+        <button type="button" class="chip" data-filter-value="applied">Applied</button>
+        <button type="button" class="chip" data-filter-value="shortlisted">Shortlisted</button>
+        <button type="button" class="chip" data-filter-value="interview">Interview</button>
+        <button type="button" class="chip" data-filter-value="selected">Selected</button>
+        <button type="button" class="chip" data-filter-value="rejected">Rejected</button>
+      </div>
+    </div>
+    <section class="card">
+      <div class="table-wrap"><table id="apps-table">
+        <thead><tr><th>Application</th><th>Candidate</th><th>Job</th><th>Eligibility</th><th>Status</th><th>Applied On</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">APP-2026-0001</td><td><strong class="name">Priya Nair</strong><br><span class="sub">58.00% · JavaScript</span></td><td>Java Developer<br><span class="sub">TCS · JOB-2026-001</span></td><td><span class="pill pill-amber">PENDING</span></td><td><span class="pill pill-amber">APPLIED</span></td><td>02 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0002</td><td><strong class="name">Arjun Mehta</strong><br><span class="sub">57.50% · Python</span></td><td>Python Developer<br><span class="sub">Infosys · JOB-2026-002</span></td><td><span class="pill pill-amber">PENDING</span></td><td><span class="pill pill-amber">APPLIED</span></td><td>02 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0003</td><td><strong class="name">Kavya Reddy</strong><br><span class="sub">59.00% · SQL</span></td><td>Frontend Developer (React)<br><span class="sub">Wipro · JOB-2026-003</span></td><td><span class="pill pill-amber">PENDING</span></td><td><span class="pill pill-amber">APPLIED</span></td><td>03 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0004</td><td><strong class="name">Aditya Singh</strong><br><span class="sub">88.90% · Java</span></td><td>SQL / Data Analyst<br><span class="sub">Accenture · JOB-2026-004</span></td><td><span class="pill pill-amber">PENDING</span></td><td><span class="pill pill-amber">APPLIED</span></td><td>03 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0005</td><td><strong class="name">Ishita Verma</strong><br><span class="sub">72.10% · React</span></td><td>Software Engineer Trainee<br><span class="sub">Capgemini · JOB-2026-005</span></td><td><span class="pill pill-amber">PENDING</span></td><td><span class="pill pill-amber">APPLIED</span></td><td>04 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0006</td><td><strong class="name">Nikhil Agarwal</strong><br><span class="sub">91.20% · Python</span></td><td>QA Engineer<br><span class="sub">Cognizant · JOB-2026-006</span></td><td><span class="pill pill-amber">PENDING</span></td><td><span class="pill pill-amber">APPLIED</span></td><td>04 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0007</td><td><strong class="name">Riya Gupta</strong><br><span class="sub">69.80% · Java</span></td><td>Full Stack Developer<br><span class="sub">Tech Mahindra · JOB-2026-007</span></td><td><span class="pill pill-amber">PENDING</span></td><td><span class="pill pill-amber">APPLIED</span></td><td>05 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0008</td><td><strong class="name">Karan Malhotra</strong><br><span class="sub">83.40% · JavaScript</span></td><td>Support Engineer<br><span class="sub">HCLTech · JOB-2026-008</span></td><td><span class="pill pill-amber">PENDING</span></td><td><span class="pill pill-amber">APPLIED</span></td><td>05 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0009</td><td><strong class="name">Divya Iyer</strong><br><span class="sub">77.70% · SQL</span></td><td>Java Developer<br><span class="sub">TCS · JOB-2026-001</span></td><td><span class="pill pill-green">ELIGIBLE</span></td><td><span class="pill pill-teal">ELIGIBILITY_VERIFIED</span></td><td>06 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0010</td><td><strong class="name">Sahil Khan</strong><br><span class="sub">65.20% · Java</span></td><td>Python Developer<br><span class="sub">Infosys · JOB-2026-002</span></td><td><span class="pill pill-green">ELIGIBLE</span></td><td><span class="pill pill-teal">ELIGIBILITY_VERIFIED</span></td><td>06 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0011</td><td><strong class="name">Tanvi Bhatt</strong><br><span class="sub">90.50% · React</span></td><td>Frontend Developer (React)<br><span class="sub">Wipro · JOB-2026-003</span></td><td><span class="pill pill-green">ELIGIBLE</span></td><td><span class="pill pill-teal">ELIGIBILITY_VERIFIED</span></td><td>07 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0012</td><td><strong class="name">Manav Choudhary</strong><br><span class="sub">56.50% · Python</span></td><td>QA Engineer<br><span class="sub">Cognizant · JOB-2026-006</span></td><td><span class="pill pill-green">ELIGIBLE</span></td><td><span class="pill pill-teal">ELIGIBILITY_VERIFIED</span></td><td>07 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0013</td><td><strong class="name">Neha Pandey</strong><br><span class="sub">74.60% · Java</span></td><td>Software Engineer Trainee<br><span class="sub">Capgemini · JOB-2026-005</span></td><td><span class="pill pill-green">ELIGIBLE</span></td><td><span class="pill pill-teal">ELIGIBILITY_VERIFIED</span></td><td>08 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0014</td><td><strong class="name">Varun Tiwari</strong><br><span class="sub">68.90% · JavaScript</span></td><td>QA Engineer<br><span class="sub">Cognizant · JOB-2026-006</span></td><td><span class="pill pill-green">ELIGIBLE</span></td><td><span class="pill pill-navy">SHORTLISTED</span></td><td>09 Feb 2026</td></tr>
+          <tr><td class="mono">APP-2026-0015</td><td><strong class="name">Anika Rao</strong><br><span class="sub">85.75% · SQL</span></td><td>Full Stack Developer<br><span class="sub">Tech Mahindra · JOB-2026-007</span></td><td><span class="pill pill-green">ELIGIBLE</span></td><td><span class="pill pill-navy">SHORTLISTED</span></td><td>09 Feb 2026</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </main>
+  <footer class="footer"><strong>RecruitPlace — Placement Cell</strong> · UI Prototype — not connected to the Java backend</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

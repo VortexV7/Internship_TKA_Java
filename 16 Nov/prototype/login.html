@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — RecruitPlace | Placement Cell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+<main class="login-wrap">
+  <div class="login-brand"><div class="logo-mark">RP</div><h1>RecruitPlace</h1><p>Recruitment &amp; Placement Management System</p></div>
+  <section class="login-card">
+    <h2>Sign in</h2>
+    <p class="hint">Sign in to the Placement Cell dashboard.</p>
+    <form action="index.html" method="get">
+      <div class="field"><label for="role">Role</label>
+        <select id="role" name="role">
+          <option>Placement Officer</option>
+          <option>Admin</option>
+          <option>Recruiter</option>
+        </select>
+      </div>
+      <div class="field"><label for="username">Username</label><input id="username" name="username" type="text" placeholder="e.g. admin" autocomplete="username" required></div>
+      <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required></div>
+      <button class="btn btn-amber" type="submit">Sign In →</button>
+      <div class="demo-note"><strong>Demo only:</strong> this is a UI prototype — no real login happens. Demo credentials: <code>admin</code> / <code>admin123</code> (prototype only — no real login). Signing in goes straight to the dashboard.</div>
+    </form>
+  </section>
+  <p class="login-foot">UI Prototype — not connected to the Java backend</p>
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>

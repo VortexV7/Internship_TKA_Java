@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — RecruitPlace | Placement Cell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar-backdrop hidden" id="sidebar-backdrop"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo-mark">RP</div><div><h1>RecruitPlace</h1><small>Placement Cell</small></div></div>
+  <nav class="nav">
+    <a href="index.html" data-page="index.html"><span class="ico">▦</span> Dashboard</a>
+    <a href="candidates.html" data-page="candidates.html"><span class="ico">👤</span> Candidates</a>
+    <a href="companies.html" data-page="companies.html"><span class="ico">🏢</span> Companies</a>
+    <a href="jobs.html" data-page="jobs.html"><span class="ico">💼</span> Jobs</a>
+    <a href="applications.html" data-page="applications.html"><span class="ico">📄</span> Applications</a>
+    <a href="interviews.html" data-page="interviews.html"><span class="ico">🎙</span> Interviews</a>
+    <a href="offers.html" data-page="offers.html"><span class="ico">✉</span> Offers</a>
+    <a href="placements.html" data-page="placements.html"><span class="ico">🎓</span> Placements</a>
+    <a href="reports.html" data-page="reports.html"><span class="ico">📊</span> Reports</a>
+  </nav>
+  <div class="sidebar-user"><div class="avatar">PO</div><div class="who"><strong>Placement Officer</strong><span>placement@college.edu</span></div><a class="logout" href="login.html">Logout</a></div>
+</aside>
+
+<div class="main">
+  <header class="topbar">
+    <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    <h2>Dashboard</h2>
+    <div class="spacer"></div>
+    <label class="search"><span aria-hidden="true">🔍</span><input type="search" placeholder="Search candidates, jobs, companies…" data-filter aria-label="Search this page"></label>
+    <a class="btn btn-amber" href="candidates.html"><span>＋</span> <span class="btn-label">New Candidate</span></a>
+  </header>
+
+  <main class="content">
+    <p class="page-sub">Placement overview for the 2024–2026 drive · Demo data — figures below are sample data.</p>
+
+    <div class="grid grid-4">
+      <div class="stat"><div class="label">Candidates</div><div class="num">30</div><div class="sub"><b>28 active</b> · 5 placed</div></div>
+      <div class="stat amber"><div class="label">Jobs</div><div class="num">12</div><div class="sub"><b>10 open</b> · 1 closed · 1 draft</div></div>
+      <div class="stat navy"><div class="label">Applications</div><div class="num">45</div><div class="sub"><b>5 joined</b> · 6 rejected</div></div>
+      <div class="stat"><div class="label">Placed</div><div class="num">5</div><div class="sub"><b>5 joined</b> · 1 to join</div></div>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:18px">
+      <section class="card">
+        <h3>Recruitment Funnel</h3>
+        <p class="hint">Applied → Joined, current drive (demo data)</p>
+        <div class="funnel-row"><span class="fname">Applied</span><div class="funnel-track"><div class="funnel-fill navy" style="width:100%"></div></div><span class="funnel-num">45</span></div>
+        <div class="funnel-row"><span class="fname">Shortlisted</span><div class="funnel-track"><div class="funnel-fill" style="width:71%"></div></div><span class="funnel-num">32</span></div>
+        <div class="funnel-row"><span class="fname">Interviewed</span><div class="funnel-track"><div class="funnel-fill" style="width:47%"></div></div><span class="funnel-num">21</span></div>
+        <div class="funnel-row"><span class="fname">Selected</span><div class="funnel-track"><div class="funnel-fill amber" style="width:20%"></div></div><span class="funnel-num">9</span></div>
+        <div class="funnel-row"><span class="fname">Offered</span><div class="funnel-track"><div class="funnel-fill amber" style="width:20%"></div></div><span class="funnel-num">9</span></div>
+        <div class="funnel-row"><span class="fname">Joined</span><div class="funnel-track"><div class="funnel-fill green" style="width:11%"></div></div><span class="funnel-num">5</span></div>
+      </section>
+
+      <section class="card">
+        <h3>Applications by Status</h3>
+        <p class="hint">Share of the 45 applications in this drive</p>
+        <div class="bar-row"><span class="bname">Applied</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#E8A317"></div></div><span class="funnel-num">8</span></div>
+        <div class="bar-row"><span class="bname">Rejected</span><div class="bar-track"><div class="bar-fill" style="width:75%;background:#C0392B"></div></div><span class="funnel-num">6</span></div>
+        <div class="bar-row"><span class="bname">Shortlisted</span><div class="bar-track"><div class="bar-fill" style="width:62%;background:#0E2233"></div></div><span class="funnel-num">5</span></div>
+        <div class="bar-row"><span class="bname">Eligibility Verified</span><div class="bar-track"><div class="bar-fill" style="width:62%;background:#0FA3A3"></div></div><span class="funnel-num">5</span></div>
+        <div class="bar-row"><span class="bname">Joined</span><div class="bar-track"><div class="bar-fill" style="width:62%;background:#1E8A4C"></div></div><span class="funnel-num">5</span></div>
+        <p class="sub" style="margin-top:10px">Most common technology: <strong>Java (10 candidates)</strong>, followed by Python (6) and React (5).</p>
+      </section>
+    </div>
+
+    <section class="card">
+      <div class="card-head"><div><h3>Recent Placements</h3><p class="hint" style="margin:4px 0 0">Latest confirmed placements in this drive</p></div><a class="btn btn-ghost btn-sm" href="placements.html">View all →</a></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Candidate</th><th>Company</th><th>Designation</th><th>Package</th><th>Joining Date</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="name">Aarav Sharma</strong><br><span class="sub">CAN-2026-0001 · BTech, 87.50%</span></td><td>Infosys</td><td>Python Developer</td><td><strong>5 LPA</strong></td><td>10 Apr 2026</td><td><span class="pill pill-green">JOINED</span></td></tr>
+          <tr><td><strong class="name">Ananya Deshmukh</strong><br><span class="sub">CAN-2026-0002 · BTech, 84.20%</span></td><td>Wipro</td><td>Frontend Developer (React)</td><td><strong>4.5 LPA</strong></td><td>10 Apr 2026</td><td><span class="pill pill-green">JOINED</span></td></tr>
+          <tr><td><strong class="name">Rohan Patil</strong><br><span class="sub">CAN-2026-0003 · BE, 78.60%</span></td><td>Capgemini</td><td>Software Engineer Trainee</td><td><strong>4 LPA</strong></td><td>15 Apr 2026</td><td><span class="pill pill-green">JOINED</span></td></tr>
+          <tr><td><strong class="name">Sneha Kulkarni</strong><br><span class="sub">CAN-2026-0004 · BTech, 81.30%</span></td><td>Tech Mahindra</td><td>Full Stack Developer</td><td><strong>7.5 LPA</strong></td><td>15 Apr 2026</td><td><span class="pill pill-green">JOINED</span></td></tr>
+          <tr><td><strong class="name">Vikram Joshi</strong><br><span class="sub">CAN-2026-0005 · MCA, 76.40%</span></td><td>Infosys</td><td>Business Analyst</td><td><strong>8.5 LPA</strong></td><td>20 Apr 2026</td><td><span class="pill pill-green">JOINED</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="card">
+      <div class="card-head"><div><h3>Open Jobs</h3><p class="hint" style="margin:4px 0 0">Currently accepting applications</p></div><a class="btn btn-ghost btn-sm" href="jobs.html">View all jobs →</a></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Job Code</th><th>Title</th><th>Company</th><th>Location</th><th>Package</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">JOB-2026-001</td><td><strong class="name">Java Developer</strong></td><td>TCS</td><td>Mumbai</td><td>4.5–6 LPA</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-002</td><td><strong class="name">Python Developer</strong></td><td>Infosys</td><td>Pune</td><td>4–5.5 LPA</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-003</td><td><strong class="name">Frontend Developer (React)</strong></td><td>Wipro</td><td>Bengaluru</td><td>3.5–5 LPA</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-007</td><td><strong class="name">Full Stack Developer</strong></td><td>Tech Mahindra</td><td>Hyderabad</td><td>5.5–8 LPA</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-009</td><td><strong class="name">DevOps Trainee</strong></td><td>TCS</td><td>Pune</td><td>4–5 LPA</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </main>
+  <footer class="footer"><strong>RecruitPlace — Placement Cell</strong> · UI Prototype — not connected to the Java backend</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recruitment &amp; Placement — ER Diagram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #F7F5F0; color: #0E2233; font-family: "Inter", system-ui, sans-serif; }
+  header { background: #0E2233; color: #fff; padding: 28px 32px 24px; }
+  header h1 { font-family: "Sora", sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+  header h1 span { color: #0FA3A3; }
+  header p { margin-top: 8px; font-size: 14px; color: #c7d3dd; max-width: 900px; line-height: 1.5; }
+  .wrap { max-width: 1560px; margin: 0 auto; padding: 24px 32px 40px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px 28px; background: #fff; border: 1px solid #e3ded2; border-radius: 10px; padding: 14px 18px; margin-bottom: 20px; font-size: 13px; }
+  .legend b { font-family: "Sora", sans-serif; }
+  .pill { display: inline-block; padding: 1px 7px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #fff; }
+  .pill.pk { background: #E8A317; } .pill.fk { background: #0FA3A3; } .pill.uk { background: #0E2233; }
+  .line-sample { display: inline-block; width: 34px; border-top: 2px solid #0FA3A3; vertical-align: middle; margin-right: 6px; position: relative; }
+  .line-sample::after { content: ""; position: absolute; right: -1px; top: -5px; border-left: 8px solid #0FA3A3; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+  .diagram { background: #fff; border: 1px solid #e3ded2; border-radius: 12px; padding: 12px; overflow-x: auto; }
+  .diagram svg { min-width: 1100px; display: block; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 20px; }
+  .card { background: #fff; border: 1px solid #e3ded2; border-left: 4px solid #0FA3A3; border-radius: 10px; padding: 16px 18px; }
+  .card h2 { font-family: "Sora", sans-serif; font-size: 15px; margin-bottom: 6px; }
+  .card p { font-size: 13px; line-height: 1.55; color: #43566a; }
+  .note { margin-top: 20px; font-size: 13px; color: #43566a; background: #fdf6e3; border: 1px solid #E8A317; border-radius: 10px; padding: 14px 18px; line-height: 1.55; }
+  .note b { color: #0E2233; }
+  footer { padding: 0 32px 32px; font-size: 12px; color: #7a8896; }
+  code { background: #ece7db; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Recruitment &amp; Placement <span>— ER Diagram</span></h1>
+  <p>Entity&ndash;relationship diagram for the <code>recruitment_db</code> database (MySQL). All 17 tables, their columns, keys and relationships — matching <code>sql/database_schema.sql</code> exactly.</p>
+</header>
+<main class="wrap">
+  <div class="legend">
+    <span><span class="pill pk">PK</span> Primary key</span>
+    <span><span class="pill fk">FK</span> Foreign key</span>
+    <span><span class="pill uk">UK</span> Unique key</span>
+    <span><span class="line-sample"></span> Relationship (arrow points to the &ldquo;many&rdquo; or child side)</span>
+    <span><b>1 : N</b> one-to-many</span>
+    <span><b>1 : 1</b> one-to-one</span>
+    <span>Read left &rarr; right: masters &amp; users, candidates &amp; skills, companies &amp; jobs, then the application pipeline.</span>
+  </div>
+  <div class="diagram">
+<svg viewBox="0 0 1480 1470" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Entity relationship diagram of the recruitment database">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0FA3A3"/></marker></defs>
+<path d="M185,145 V175" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M350,230 H370 V860 H740 V485 H760" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="745" y="480" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M350,270 H370 V880 H1105" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M1105,880 V130" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M1105,130 H1130" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="1108" y="122" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M1105,355 H1130" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="1108" y="347" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M1105,825 H1130" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="1108" y="817" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M1090,420 H1105" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M720,150 H735 V940 H1105" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M20,300 H8 V765 H20" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="14" y="540" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M720,300 H735 V635 H720" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="738" y="470" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M555,535 V565" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="560" y="552" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M925,265 V295" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="930" y="282" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M925,675 V705" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="930" y="692" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M720,480 H735 V765 H760" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="738" y="620" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M1295,245 V275" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="1300" y="262" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M1295,435 V465" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="1300" y="452" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M1295,690 V720" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="1300" y="707" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : 1</text>
+<path d="M1460,120 H1472 V1065 H1460" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="1440" y="590" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : 1</text>
+<path d="M1295,1170 V1200" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="1300" y="1187" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : 1</text>
+<path d="M720,350 H735 V950 H1120" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M1090,120 H1120" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M1090,500 H1120" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M1120,120 V1350" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M1120,1250 H1130" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="1100" y="1242" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M1120,1300 H1130" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="1100" y="1292" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<path d="M1120,1350 H1130" fill="none" stroke="#0FA3A3" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="1100" y="1342" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0FA3A3">1 : N</text>
+<g><rect x="20" y="20" width="330" height="121" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="20" y="20" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="20" y="44" width="330" height="6" fill="#0E2233"/>
+<text x="32" y="40" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">roles</text>
+<text x="32" y="63" font-family="Inter, monospace" font-size="11" fill="#0E2233">role_id</text>
+<text x="232" y="63" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="338" y="63" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="28" y1="68" x2="342" y2="68" stroke="#eee" stroke-width="1"/>
+<text x="32" y="80" font-family="Inter, monospace" font-size="11" fill="#0E2233">role_code</text>
+<text x="232" y="80" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="338" y="80" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(30)</text>
+<line x1="28" y1="85" x2="342" y2="85" stroke="#eee" stroke-width="1"/>
+<text x="32" y="97" font-family="Inter, monospace" font-size="11" fill="#0E2233">role_name</text>
+<text x="338" y="97" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(80)</text>
+<line x1="28" y1="102" x2="342" y2="102" stroke="#eee" stroke-width="1"/>
+<text x="32" y="114" font-family="Inter, monospace" font-size="11" fill="#0E2233">is_active</text>
+<text x="338" y="114" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">TINYINT(1)</text>
+<line x1="28" y1="119" x2="342" y2="119" stroke="#eee" stroke-width="1"/>
+<text x="32" y="131" font-family="Inter, monospace" font-size="11" fill="#0E2233">created_at</text>
+<text x="338" y="131" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+<g><rect x="20" y="175" width="330" height="189" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="20" y="175" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="20" y="199" width="330" height="6" fill="#0E2233"/>
+<text x="32" y="195" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">users</text>
+<text x="32" y="218" font-family="Inter, monospace" font-size="11" fill="#0E2233">user_id</text>
+<text x="232" y="218" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="338" y="218" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="28" y1="223" x2="342" y2="223" stroke="#eee" stroke-width="1"/>
+<text x="32" y="235" font-family="Inter, monospace" font-size="11" fill="#0E2233">username</text>
+<text x="232" y="235" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="338" y="235" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(80)</text>
+<line x1="28" y1="240" x2="342" y2="240" stroke="#eee" stroke-width="1"/>
+<text x="32" y="252" font-family="Inter, monospace" font-size="11" fill="#0E2233">password_hash</text>
+<text x="338" y="252" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(255)</text>
+<line x1="28" y1="257" x2="342" y2="257" stroke="#eee" stroke-width="1"/>
+<text x="32" y="269" font-family="Inter, monospace" font-size="11" fill="#0E2233">full_name</text>
+<text x="338" y="269" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(120)</text>
+<line x1="28" y1="274" x2="342" y2="274" stroke="#eee" stroke-width="1"/>
+<text x="32" y="286" font-family="Inter, monospace" font-size="11" fill="#0E2233">email</text>
+<text x="232" y="286" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="338" y="286" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(150)</text>
+<line x1="28" y1="291" x2="342" y2="291" stroke="#eee" stroke-width="1"/>
+<text x="32" y="303" font-family="Inter, monospace" font-size="11" fill="#0E2233">role_id</text>
+<text x="232" y="303" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="338" y="303" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="28" y1="308" x2="342" y2="308" stroke="#eee" stroke-width="1"/>
+<text x="32" y="320" font-family="Inter, monospace" font-size="11" fill="#0E2233">status</text>
+<text x="338" y="320" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="28" y1="325" x2="342" y2="325" stroke="#eee" stroke-width="1"/>
+<text x="32" y="337" font-family="Inter, monospace" font-size="11" fill="#0E2233">last_login_at</text>
+<text x="338" y="337" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+<line x1="28" y1="342" x2="342" y2="342" stroke="#eee" stroke-width="1"/>
+<text x="32" y="354" font-family="Inter, monospace" font-size="11" fill="#0E2233">created_at</text>
+<text x="338" y="354" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+<g><rect x="20" y="395" width="330" height="104" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="20" y="395" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="20" y="419" width="330" height="6" fill="#0E2233"/>
+<text x="32" y="415" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">qualifications</text>
+<text x="32" y="438" font-family="Inter, monospace" font-size="11" fill="#0E2233">qualification_id</text>
+<text x="232" y="438" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="338" y="438" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="28" y1="443" x2="342" y2="443" stroke="#eee" stroke-width="1"/>
+<text x="32" y="455" font-family="Inter, monospace" font-size="11" fill="#0E2233">qualification_code</text>
+<text x="232" y="455" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="338" y="455" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(30)</text>
+<line x1="28" y1="460" x2="342" y2="460" stroke="#eee" stroke-width="1"/>
+<text x="32" y="472" font-family="Inter, monospace" font-size="11" fill="#0E2233">qualification_name</text>
+<text x="338" y="472" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(80)</text>
+<line x1="28" y1="477" x2="342" y2="477" stroke="#eee" stroke-width="1"/>
+<text x="32" y="489" font-family="Inter, monospace" font-size="11" fill="#0E2233">is_active</text>
+<text x="338" y="489" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">TINYINT(1)</text>
+</g>
+<g><rect x="20" y="530" width="330" height="121" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="20" y="530" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="20" y="554" width="330" height="6" fill="#0E2233"/>
+<text x="32" y="550" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">locations</text>
+<text x="32" y="573" font-family="Inter, monospace" font-size="11" fill="#0E2233">location_id</text>
+<text x="232" y="573" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="338" y="573" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="28" y1="578" x2="342" y2="578" stroke="#eee" stroke-width="1"/>
+<text x="32" y="590" font-family="Inter, monospace" font-size="11" fill="#0E2233">location_code</text>
+<text x="232" y="590" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="338" y="590" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(30)</text>
+<line x1="28" y1="595" x2="342" y2="595" stroke="#eee" stroke-width="1"/>
+<text x="32" y="607" font-family="Inter, monospace" font-size="11" fill="#0E2233">city</text>
+<text x="338" y="607" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(100)</text>
+<line x1="28" y1="612" x2="342" y2="612" stroke="#eee" stroke-width="1"/>
+<text x="32" y="624" font-family="Inter, monospace" font-size="11" fill="#0E2233">state</text>
+<text x="338" y="624" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(100)</text>
+<line x1="28" y1="629" x2="342" y2="629" stroke="#eee" stroke-width="1"/>
+<text x="32" y="641" font-family="Inter, monospace" font-size="11" fill="#0E2233">is_active</text>
+<text x="338" y="641" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">TINYINT(1)</text>
+</g>
+<g><rect x="20" y="685" width="330" height="155" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="20" y="685" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="20" y="709" width="330" height="6" fill="#0E2233"/>
+<text x="32" y="705" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">activity_logs</text>
+<text x="32" y="728" font-family="Inter, monospace" font-size="11" fill="#0E2233">log_id</text>
+<text x="232" y="728" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="338" y="728" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">BIGINT</text>
+<line x1="28" y1="733" x2="342" y2="733" stroke="#eee" stroke-width="1"/>
+<text x="32" y="745" font-family="Inter, monospace" font-size="11" fill="#0E2233">user_id</text>
+<text x="232" y="745" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="338" y="745" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="28" y1="750" x2="342" y2="750" stroke="#eee" stroke-width="1"/>
+<text x="32" y="762" font-family="Inter, monospace" font-size="11" fill="#0E2233">module_name</text>
+<text x="338" y="762" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(60)</text>
+<line x1="28" y1="767" x2="342" y2="767" stroke="#eee" stroke-width="1"/>
+<text x="32" y="779" font-family="Inter, monospace" font-size="11" fill="#0E2233">action_name</text>
+<text x="338" y="779" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(80)</text>
+<line x1="28" y1="784" x2="342" y2="784" stroke="#eee" stroke-width="1"/>
+<text x="32" y="796" font-family="Inter, monospace" font-size="11" fill="#0E2233">record_id</text>
+<text x="338" y="796" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(60)</text>
+<line x1="28" y1="801" x2="342" y2="801" stroke="#eee" stroke-width="1"/>
+<text x="32" y="813" font-family="Inter, monospace" font-size="11" fill="#0E2233">description</text>
+<text x="338" y="813" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(500)</text>
+<line x1="28" y1="818" x2="342" y2="818" stroke="#eee" stroke-width="1"/>
+<text x="32" y="830" font-family="Inter, monospace" font-size="11" fill="#0E2233">logged_at</text>
+<text x="338" y="830" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+<g><rect x="390" y="20" width="330" height="376" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="390" y="20" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="390" y="44" width="330" height="6" fill="#0E2233"/>
+<text x="402" y="40" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">candidates</text>
+<text x="402" y="63" font-family="Inter, monospace" font-size="11" fill="#0E2233">candidate_id</text>
+<text x="602" y="63" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="708" y="63" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="398" y1="68" x2="712" y2="68" stroke="#eee" stroke-width="1"/>
+<text x="402" y="80" font-family="Inter, monospace" font-size="11" fill="#0E2233">candidate_code</text>
+<text x="602" y="80" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="708" y="80" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(30)</text>
+<line x1="398" y1="85" x2="712" y2="85" stroke="#eee" stroke-width="1"/>
+<text x="402" y="97" font-family="Inter, monospace" font-size="11" fill="#0E2233">full_name</text>
+<text x="708" y="97" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(150)</text>
+<line x1="398" y1="102" x2="712" y2="102" stroke="#eee" stroke-width="1"/>
+<text x="402" y="114" font-family="Inter, monospace" font-size="11" fill="#0E2233">email</text>
+<text x="602" y="114" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="708" y="114" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(150)</text>
+<line x1="398" y1="119" x2="712" y2="119" stroke="#eee" stroke-width="1"/>
+<text x="402" y="131" font-family="Inter, monospace" font-size="11" fill="#0E2233">mobile</text>
+<text x="602" y="131" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="708" y="131" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="398" y1="136" x2="712" y2="136" stroke="#eee" stroke-width="1"/>
+<text x="402" y="148" font-family="Inter, monospace" font-size="11" fill="#0E2233">date_of_birth</text>
+<text x="708" y="148" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATE</text>
+<line x1="398" y1="153" x2="712" y2="153" stroke="#eee" stroke-width="1"/>
+<text x="402" y="165" font-family="Inter, monospace" font-size="11" fill="#0E2233">gender</text>
+<text x="708" y="165" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="398" y1="170" x2="712" y2="170" stroke="#eee" stroke-width="1"/>
+<text x="402" y="182" font-family="Inter, monospace" font-size="11" fill="#0E2233">qualification</text>
+<text x="708" y="182" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(80)</text>
+<line x1="398" y1="187" x2="712" y2="187" stroke="#eee" stroke-width="1"/>
+<text x="402" y="199" font-family="Inter, monospace" font-size="11" fill="#0E2233">college</text>
+<text x="708" y="199" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(180)</text>
+<line x1="398" y1="204" x2="712" y2="204" stroke="#eee" stroke-width="1"/>
+<text x="402" y="216" font-family="Inter, monospace" font-size="11" fill="#0E2233">university</text>
+<text x="708" y="216" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(180)</text>
+<line x1="398" y1="221" x2="712" y2="221" stroke="#eee" stroke-width="1"/>
+<text x="402" y="233" font-family="Inter, monospace" font-size="11" fill="#0E2233">passing_year</text>
+<text x="708" y="233" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">SMALLINT</text>
+<line x1="398" y1="238" x2="712" y2="238" stroke="#eee" stroke-width="1"/>
+<text x="402" y="250" font-family="Inter, monospace" font-size="11" fill="#0E2233">percentage</text>
+<text x="708" y="250" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(5,2)</text>
+<line x1="398" y1="255" x2="712" y2="255" stroke="#eee" stroke-width="1"/>
+<text x="402" y="267" font-family="Inter, monospace" font-size="11" fill="#0E2233">cgpa</text>
+<text x="708" y="267" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(4,2)</text>
+<line x1="398" y1="272" x2="712" y2="272" stroke="#eee" stroke-width="1"/>
+<text x="402" y="284" font-family="Inter, monospace" font-size="11" fill="#0E2233">backlog_count</text>
+<text x="708" y="284" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="398" y1="289" x2="712" y2="289" stroke="#eee" stroke-width="1"/>
+<text x="402" y="301" font-family="Inter, monospace" font-size="11" fill="#0E2233">primary_technology</text>
+<text x="708" y="301" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(80)</text>
+<line x1="398" y1="306" x2="712" y2="306" stroke="#eee" stroke-width="1"/>
+<text x="402" y="318" font-family="Inter, monospace" font-size="11" fill="#0E2233">current_location</text>
+<text x="708" y="318" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(100)</text>
+<line x1="398" y1="323" x2="712" y2="323" stroke="#eee" stroke-width="1"/>
+<text x="402" y="335" font-family="Inter, monospace" font-size="11" fill="#0E2233">preferred_location</text>
+<text x="708" y="335" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(100)</text>
+<line x1="398" y1="340" x2="712" y2="340" stroke="#eee" stroke-width="1"/>
+<text x="402" y="352" font-family="Inter, monospace" font-size="11" fill="#0E2233">profile_status</text>
+<text x="708" y="352" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="398" y1="357" x2="712" y2="357" stroke="#eee" stroke-width="1"/>
+<text x="402" y="369" font-family="Inter, monospace" font-size="11" fill="#0E2233">placement_status</text>
+<text x="708" y="369" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="398" y1="374" x2="712" y2="374" stroke="#eee" stroke-width="1"/>
+<text x="402" y="386" font-family="Inter, monospace" font-size="11" fill="#0E2233">created_at / updated_at</text>
+<text x="708" y="386" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+<g><rect x="390" y="430" width="330" height="104" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="390" y="430" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="390" y="454" width="330" height="6" fill="#0E2233"/>
+<text x="402" y="450" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">skills</text>
+<text x="402" y="473" font-family="Inter, monospace" font-size="11" fill="#0E2233">skill_id</text>
+<text x="602" y="473" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="708" y="473" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="398" y1="478" x2="712" y2="478" stroke="#eee" stroke-width="1"/>
+<text x="402" y="490" font-family="Inter, monospace" font-size="11" fill="#0E2233">skill_name</text>
+<text x="602" y="490" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="708" y="490" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(100)</text>
+<line x1="398" y1="495" x2="712" y2="495" stroke="#eee" stroke-width="1"/>
+<text x="402" y="507" font-family="Inter, monospace" font-size="11" fill="#0E2233">category</text>
+<text x="708" y="507" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(60)</text>
+<line x1="398" y1="512" x2="712" y2="512" stroke="#eee" stroke-width="1"/>
+<text x="402" y="524" font-family="Inter, monospace" font-size="11" fill="#0E2233">is_active</text>
+<text x="708" y="524" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">TINYINT(1)</text>
+</g>
+<g><rect x="390" y="565" width="330" height="138" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="390" y="565" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="390" y="589" width="330" height="6" fill="#0E2233"/>
+<text x="402" y="585" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">candidate_skills</text>
+<text x="402" y="608" font-family="Inter, monospace" font-size="11" fill="#0E2233">candidate_skill_id</text>
+<text x="602" y="608" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="708" y="608" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="398" y1="613" x2="712" y2="613" stroke="#eee" stroke-width="1"/>
+<text x="402" y="625" font-family="Inter, monospace" font-size="11" fill="#0E2233">candidate_id</text>
+<text x="602" y="625" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="708" y="625" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="398" y1="630" x2="712" y2="630" stroke="#eee" stroke-width="1"/>
+<text x="402" y="642" font-family="Inter, monospace" font-size="11" fill="#0E2233">skill_id</text>
+<text x="602" y="642" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="708" y="642" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="398" y1="647" x2="712" y2="647" stroke="#eee" stroke-width="1"/>
+<text x="402" y="659" font-family="Inter, monospace" font-size="11" fill="#0E2233">proficiency_level</text>
+<text x="708" y="659" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="398" y1="664" x2="712" y2="664" stroke="#eee" stroke-width="1"/>
+<text x="402" y="676" font-family="Inter, monospace" font-size="11" fill="#0E2233">years_experience</text>
+<text x="708" y="676" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(4,1)</text>
+<line x1="398" y1="681" x2="712" y2="681" stroke="#eee" stroke-width="1"/>
+<text x="402" y="693" font-family="Inter, monospace" font-size="11" fill="#0E2233">is_primary</text>
+<text x="708" y="693" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">TINYINT(1)</text>
+</g>
+<g><rect x="760" y="20" width="330" height="240" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="760" y="20" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="760" y="44" width="330" height="6" fill="#0E2233"/>
+<text x="772" y="40" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">companies</text>
+<text x="772" y="63" font-family="Inter, monospace" font-size="11" fill="#0E2233">company_id</text>
+<text x="972" y="63" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="1078" y="63" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="768" y1="68" x2="1082" y2="68" stroke="#eee" stroke-width="1"/>
+<text x="772" y="80" font-family="Inter, monospace" font-size="11" fill="#0E2233">company_code</text>
+<text x="972" y="80" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="1078" y="80" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(30)</text>
+<line x1="768" y1="85" x2="1082" y2="85" stroke="#eee" stroke-width="1"/>
+<text x="772" y="97" font-family="Inter, monospace" font-size="11" fill="#0E2233">company_name</text>
+<text x="1078" y="97" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(180)</text>
+<line x1="768" y1="102" x2="1082" y2="102" stroke="#eee" stroke-width="1"/>
+<text x="772" y="114" font-family="Inter, monospace" font-size="11" fill="#0E2233">industry</text>
+<text x="1078" y="114" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(100)</text>
+<line x1="768" y1="119" x2="1082" y2="119" stroke="#eee" stroke-width="1"/>
+<text x="772" y="131" font-family="Inter, monospace" font-size="11" fill="#0E2233">website</text>
+<text x="1078" y="131" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(200)</text>
+<line x1="768" y1="136" x2="1082" y2="136" stroke="#eee" stroke-width="1"/>
+<text x="772" y="148" font-family="Inter, monospace" font-size="11" fill="#0E2233">location</text>
+<text x="1078" y="148" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(120)</text>
+<line x1="768" y1="153" x2="1082" y2="153" stroke="#eee" stroke-width="1"/>
+<text x="772" y="165" font-family="Inter, monospace" font-size="11" fill="#0E2233">company_type</text>
+<text x="1078" y="165" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(30)</text>
+<line x1="768" y1="170" x2="1082" y2="170" stroke="#eee" stroke-width="1"/>
+<text x="772" y="182" font-family="Inter, monospace" font-size="11" fill="#0E2233">hr_name</text>
+<text x="1078" y="182" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(120)</text>
+<line x1="768" y1="187" x2="1082" y2="187" stroke="#eee" stroke-width="1"/>
+<text x="772" y="199" font-family="Inter, monospace" font-size="11" fill="#0E2233">hr_email</text>
+<text x="1078" y="199" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(150)</text>
+<line x1="768" y1="204" x2="1082" y2="204" stroke="#eee" stroke-width="1"/>
+<text x="772" y="216" font-family="Inter, monospace" font-size="11" fill="#0E2233">hr_mobile</text>
+<text x="1078" y="216" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="768" y1="221" x2="1082" y2="221" stroke="#eee" stroke-width="1"/>
+<text x="772" y="233" font-family="Inter, monospace" font-size="11" fill="#0E2233">status</text>
+<text x="1078" y="233" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="768" y1="238" x2="1082" y2="238" stroke="#eee" stroke-width="1"/>
+<text x="772" y="250" font-family="Inter, monospace" font-size="11" fill="#0E2233">created_at</text>
+<text x="1078" y="250" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+<g><rect x="760" y="295" width="330" height="376" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="760" y="295" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="760" y="319" width="330" height="6" fill="#0E2233"/>
+<text x="772" y="315" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">jobs</text>
+<text x="772" y="338" font-family="Inter, monospace" font-size="11" fill="#0E2233">job_id</text>
+<text x="972" y="338" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="1078" y="338" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="768" y1="343" x2="1082" y2="343" stroke="#eee" stroke-width="1"/>
+<text x="772" y="355" font-family="Inter, monospace" font-size="11" fill="#0E2233">job_code</text>
+<text x="972" y="355" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="1078" y="355" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(40)</text>
+<line x1="768" y1="360" x2="1082" y2="360" stroke="#eee" stroke-width="1"/>
+<text x="772" y="372" font-family="Inter, monospace" font-size="11" fill="#0E2233">company_id</text>
+<text x="972" y="372" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1078" y="372" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="768" y1="377" x2="1082" y2="377" stroke="#eee" stroke-width="1"/>
+<text x="772" y="389" font-family="Inter, monospace" font-size="11" fill="#0E2233">job_title</text>
+<text x="1078" y="389" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(150)</text>
+<line x1="768" y1="394" x2="1082" y2="394" stroke="#eee" stroke-width="1"/>
+<text x="772" y="406" font-family="Inter, monospace" font-size="11" fill="#0E2233">employment_type</text>
+<text x="1078" y="406" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(30)</text>
+<line x1="768" y1="411" x2="1082" y2="411" stroke="#eee" stroke-width="1"/>
+<text x="772" y="423" font-family="Inter, monospace" font-size="11" fill="#0E2233">location</text>
+<text x="1078" y="423" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(120)</text>
+<line x1="768" y1="428" x2="1082" y2="428" stroke="#eee" stroke-width="1"/>
+<text x="772" y="440" font-family="Inter, monospace" font-size="11" fill="#0E2233">openings</text>
+<text x="1078" y="440" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="768" y1="445" x2="1082" y2="445" stroke="#eee" stroke-width="1"/>
+<text x="772" y="457" font-family="Inter, monospace" font-size="11" fill="#0E2233">min_package_lpa</text>
+<text x="1078" y="457" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(6,2)</text>
+<line x1="768" y1="462" x2="1082" y2="462" stroke="#eee" stroke-width="1"/>
+<text x="772" y="474" font-family="Inter, monospace" font-size="11" fill="#0E2233">max_package_lpa</text>
+<text x="1078" y="474" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(6,2)</text>
+<line x1="768" y1="479" x2="1082" y2="479" stroke="#eee" stroke-width="1"/>
+<text x="772" y="491" font-family="Inter, monospace" font-size="11" fill="#0E2233">min_percentage</text>
+<text x="1078" y="491" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(5,2)</text>
+<line x1="768" y1="496" x2="1082" y2="496" stroke="#eee" stroke-width="1"/>
+<text x="772" y="508" font-family="Inter, monospace" font-size="11" fill="#0E2233">min_passing_year</text>
+<text x="1078" y="508" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">SMALLINT</text>
+<line x1="768" y1="513" x2="1082" y2="513" stroke="#eee" stroke-width="1"/>
+<text x="772" y="525" font-family="Inter, monospace" font-size="11" fill="#0E2233">max_passing_year</text>
+<text x="1078" y="525" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">SMALLINT</text>
+<line x1="768" y1="530" x2="1082" y2="530" stroke="#eee" stroke-width="1"/>
+<text x="772" y="542" font-family="Inter, monospace" font-size="11" fill="#0E2233">max_backlogs</text>
+<text x="1078" y="542" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="768" y1="547" x2="1082" y2="547" stroke="#eee" stroke-width="1"/>
+<text x="772" y="559" font-family="Inter, monospace" font-size="11" fill="#0E2233">experience_min_years</text>
+<text x="1078" y="559" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(4,1)</text>
+<line x1="768" y1="564" x2="1082" y2="564" stroke="#eee" stroke-width="1"/>
+<text x="772" y="576" font-family="Inter, monospace" font-size="11" fill="#0E2233">qualification_rule</text>
+<text x="1078" y="576" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(255)</text>
+<line x1="768" y1="581" x2="1082" y2="581" stroke="#eee" stroke-width="1"/>
+<text x="772" y="593" font-family="Inter, monospace" font-size="11" fill="#0E2233">posted_date</text>
+<text x="1078" y="593" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATE</text>
+<line x1="768" y1="598" x2="1082" y2="598" stroke="#eee" stroke-width="1"/>
+<text x="772" y="610" font-family="Inter, monospace" font-size="11" fill="#0E2233">application_deadline</text>
+<text x="1078" y="610" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATE</text>
+<line x1="768" y1="615" x2="1082" y2="615" stroke="#eee" stroke-width="1"/>
+<text x="772" y="627" font-family="Inter, monospace" font-size="11" fill="#0E2233">status</text>
+<text x="1078" y="627" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="768" y1="632" x2="1082" y2="632" stroke="#eee" stroke-width="1"/>
+<text x="772" y="644" font-family="Inter, monospace" font-size="11" fill="#0E2233">created_by</text>
+<text x="972" y="644" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1078" y="644" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="768" y1="649" x2="1082" y2="649" stroke="#eee" stroke-width="1"/>
+<text x="772" y="661" font-family="Inter, monospace" font-size="11" fill="#0E2233">created_at</text>
+<text x="1078" y="661" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+<g><rect x="760" y="705" width="330" height="121" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="760" y="705" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="760" y="729" width="330" height="6" fill="#0E2233"/>
+<text x="772" y="725" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">job_skills</text>
+<text x="772" y="748" font-family="Inter, monospace" font-size="11" fill="#0E2233">job_skill_id</text>
+<text x="972" y="748" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="1078" y="748" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="768" y1="753" x2="1082" y2="753" stroke="#eee" stroke-width="1"/>
+<text x="772" y="765" font-family="Inter, monospace" font-size="11" fill="#0E2233">job_id</text>
+<text x="972" y="765" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1078" y="765" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="768" y1="770" x2="1082" y2="770" stroke="#eee" stroke-width="1"/>
+<text x="772" y="782" font-family="Inter, monospace" font-size="11" fill="#0E2233">skill_id</text>
+<text x="972" y="782" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1078" y="782" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="768" y1="787" x2="1082" y2="787" stroke="#eee" stroke-width="1"/>
+<text x="772" y="799" font-family="Inter, monospace" font-size="11" fill="#0E2233">minimum_level</text>
+<text x="1078" y="799" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="768" y1="804" x2="1082" y2="804" stroke="#eee" stroke-width="1"/>
+<text x="772" y="816" font-family="Inter, monospace" font-size="11" fill="#0E2233">mandatory_flag</text>
+<text x="1078" y="816" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">TINYINT(1)</text>
+</g>
+<g><rect x="1130" y="20" width="330" height="223" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="1130" y="20" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="1130" y="44" width="330" height="6" fill="#0E2233"/>
+<text x="1142" y="40" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">applications</text>
+<text x="1142" y="63" font-family="Inter, monospace" font-size="11" fill="#0E2233">application_id</text>
+<text x="1342" y="63" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="1448" y="63" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="68" x2="1452" y2="68" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="80" font-family="Inter, monospace" font-size="11" fill="#0E2233">application_code</text>
+<text x="1342" y="80" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="1448" y="80" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(40)</text>
+<line x1="1138" y1="85" x2="1452" y2="85" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="97" font-family="Inter, monospace" font-size="11" fill="#0E2233">candidate_id</text>
+<text x="1342" y="97" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1448" y="97" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="102" x2="1452" y2="102" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="114" font-family="Inter, monospace" font-size="11" fill="#0E2233">job_id</text>
+<text x="1342" y="114" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1448" y="114" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="119" x2="1452" y2="119" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="131" font-family="Inter, monospace" font-size="11" fill="#0E2233">applied_at</text>
+<text x="1448" y="131" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+<line x1="1138" y1="136" x2="1452" y2="136" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="148" font-family="Inter, monospace" font-size="11" fill="#0E2233">eligibility_status</text>
+<text x="1448" y="148" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="1138" y1="153" x2="1452" y2="153" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="165" font-family="Inter, monospace" font-size="11" fill="#0E2233">eligibility_reason</text>
+<text x="1448" y="165" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(500)</text>
+<line x1="1138" y1="170" x2="1452" y2="170" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="182" font-family="Inter, monospace" font-size="11" fill="#0E2233">application_status</text>
+<text x="1448" y="182" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(30)</text>
+<line x1="1138" y1="187" x2="1452" y2="187" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="199" font-family="Inter, monospace" font-size="11" fill="#0E2233">source</text>
+<text x="1448" y="199" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(50)</text>
+<line x1="1138" y1="204" x2="1452" y2="204" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="216" font-family="Inter, monospace" font-size="11" fill="#0E2233">assigned_recruiter_id</text>
+<text x="1342" y="216" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1448" y="216" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="221" x2="1452" y2="221" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="233" font-family="Inter, monospace" font-size="11" fill="#0E2233">updated_at</text>
+<text x="1448" y="233" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+<g><rect x="1130" y="275" width="330" height="155" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="1130" y="275" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="1130" y="299" width="330" height="6" fill="#0E2233"/>
+<text x="1142" y="295" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">application_history</text>
+<text x="1142" y="318" font-family="Inter, monospace" font-size="11" fill="#0E2233">history_id</text>
+<text x="1342" y="318" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="1448" y="318" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">BIGINT</text>
+<line x1="1138" y1="323" x2="1452" y2="323" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="335" font-family="Inter, monospace" font-size="11" fill="#0E2233">application_id</text>
+<text x="1342" y="335" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1448" y="335" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="340" x2="1452" y2="340" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="352" font-family="Inter, monospace" font-size="11" fill="#0E2233">old_status</text>
+<text x="1448" y="352" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(30)</text>
+<line x1="1138" y1="357" x2="1452" y2="357" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="369" font-family="Inter, monospace" font-size="11" fill="#0E2233">new_status</text>
+<text x="1448" y="369" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(30)</text>
+<line x1="1138" y1="374" x2="1452" y2="374" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="386" font-family="Inter, monospace" font-size="11" fill="#0E2233">remarks</text>
+<text x="1448" y="386" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(500)</text>
+<line x1="1138" y1="391" x2="1452" y2="391" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="403" font-family="Inter, monospace" font-size="11" fill="#0E2233">changed_by</text>
+<text x="1342" y="403" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1448" y="403" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="408" x2="1452" y2="408" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="420" font-family="Inter, monospace" font-size="11" fill="#0E2233">changed_at</text>
+<text x="1448" y="420" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+<g><rect x="1130" y="465" width="330" height="223" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="1130" y="465" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="1130" y="489" width="330" height="6" fill="#0E2233"/>
+<text x="1142" y="485" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">interview_rounds</text>
+<text x="1142" y="508" font-family="Inter, monospace" font-size="11" fill="#0E2233">interview_id</text>
+<text x="1342" y="508" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="1448" y="508" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="513" x2="1452" y2="513" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="525" font-family="Inter, monospace" font-size="11" fill="#0E2233">application_id</text>
+<text x="1342" y="525" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1448" y="525" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="530" x2="1452" y2="530" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="542" font-family="Inter, monospace" font-size="11" fill="#0E2233">round_number</text>
+<text x="1448" y="542" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="547" x2="1452" y2="547" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="559" font-family="Inter, monospace" font-size="11" fill="#0E2233">round_type</text>
+<text x="1448" y="559" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(50)</text>
+<line x1="1138" y1="564" x2="1452" y2="564" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="576" font-family="Inter, monospace" font-size="11" fill="#0E2233">scheduled_date</text>
+<text x="1448" y="576" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATE</text>
+<line x1="1138" y1="581" x2="1452" y2="581" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="593" font-family="Inter, monospace" font-size="11" fill="#0E2233">scheduled_time</text>
+<text x="1448" y="593" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">TIME</text>
+<line x1="1138" y1="598" x2="1452" y2="598" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="610" font-family="Inter, monospace" font-size="11" fill="#0E2233">mode</text>
+<text x="1448" y="610" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="1138" y1="615" x2="1452" y2="615" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="627" font-family="Inter, monospace" font-size="11" fill="#0E2233">interviewer_name</text>
+<text x="1448" y="627" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(120)</text>
+<line x1="1138" y1="632" x2="1452" y2="632" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="644" font-family="Inter, monospace" font-size="11" fill="#0E2233">meeting_or_location</text>
+<text x="1448" y="644" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(255)</text>
+<line x1="1138" y1="649" x2="1452" y2="649" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="661" font-family="Inter, monospace" font-size="11" fill="#0E2233">status</text>
+<text x="1448" y="661" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="1138" y1="666" x2="1452" y2="666" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="678" font-family="Inter, monospace" font-size="11" fill="#0E2233">created_at</text>
+<text x="1448" y="678" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+<g><rect x="1130" y="720" width="330" height="206" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="1130" y="720" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="1130" y="744" width="330" height="6" fill="#0E2233"/>
+<text x="1142" y="740" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">interview_feedback</text>
+<text x="1142" y="763" font-family="Inter, monospace" font-size="11" fill="#0E2233">feedback_id</text>
+<text x="1342" y="763" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="1448" y="763" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="768" x2="1452" y2="768" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="780" font-family="Inter, monospace" font-size="11" fill="#0E2233">interview_id</text>
+<text x="1342" y="780" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK·UK</text>
+<text x="1448" y="780" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="785" x2="1452" y2="785" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="797" font-family="Inter, monospace" font-size="11" fill="#0E2233">technical_rating</text>
+<text x="1448" y="797" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(3,1)</text>
+<line x1="1138" y1="802" x2="1452" y2="802" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="814" font-family="Inter, monospace" font-size="11" fill="#0E2233">communication_rating</text>
+<text x="1448" y="814" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(3,1)</text>
+<line x1="1138" y1="819" x2="1452" y2="819" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="831" font-family="Inter, monospace" font-size="11" fill="#0E2233">problem_solving_rating</text>
+<text x="1448" y="831" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(3,1)</text>
+<line x1="1138" y1="836" x2="1452" y2="836" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="848" font-family="Inter, monospace" font-size="11" fill="#0E2233">overall_rating</text>
+<text x="1448" y="848" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(3,1)</text>
+<line x1="1138" y1="853" x2="1452" y2="853" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="865" font-family="Inter, monospace" font-size="11" fill="#0E2233">recommendation</text>
+<text x="1448" y="865" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(30)</text>
+<line x1="1138" y1="870" x2="1452" y2="870" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="882" font-family="Inter, monospace" font-size="11" fill="#0E2233">remarks</text>
+<text x="1448" y="882" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">TEXT</text>
+<line x1="1138" y1="887" x2="1452" y2="887" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="899" font-family="Inter, monospace" font-size="11" fill="#0E2233">submitted_by</text>
+<text x="1342" y="899" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1448" y="899" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="904" x2="1452" y2="904" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="916" font-family="Inter, monospace" font-size="11" fill="#0E2233">submitted_at</text>
+<text x="1448" y="916" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+<g><rect x="1130" y="960" width="330" height="206" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="1130" y="960" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="1130" y="984" width="330" height="6" fill="#0E2233"/>
+<text x="1142" y="980" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">offers</text>
+<text x="1142" y="1003" font-family="Inter, monospace" font-size="11" fill="#0E2233">offer_id</text>
+<text x="1342" y="1003" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="1448" y="1003" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="1008" x2="1452" y2="1008" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1020" font-family="Inter, monospace" font-size="11" fill="#0E2233">offer_code</text>
+<text x="1342" y="1020" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">UK</text>
+<text x="1448" y="1020" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(40)</text>
+<line x1="1138" y1="1025" x2="1452" y2="1025" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1037" font-family="Inter, monospace" font-size="11" fill="#0E2233">application_id</text>
+<text x="1342" y="1037" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK·UK</text>
+<text x="1448" y="1037" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="1042" x2="1452" y2="1042" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1054" font-family="Inter, monospace" font-size="11" fill="#0E2233">designation</text>
+<text x="1448" y="1054" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(120)</text>
+<line x1="1138" y1="1059" x2="1452" y2="1059" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1071" font-family="Inter, monospace" font-size="11" fill="#0E2233">offered_package_lpa</text>
+<text x="1448" y="1071" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(6,2)</text>
+<line x1="1138" y1="1076" x2="1452" y2="1076" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1088" font-family="Inter, monospace" font-size="11" fill="#0E2233">offer_date</text>
+<text x="1448" y="1088" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATE</text>
+<line x1="1138" y1="1093" x2="1452" y2="1093" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1105" font-family="Inter, monospace" font-size="11" fill="#0E2233">expected_joining_date</text>
+<text x="1448" y="1105" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATE</text>
+<line x1="1138" y1="1110" x2="1452" y2="1110" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1122" font-family="Inter, monospace" font-size="11" fill="#0E2233">offer_status</text>
+<text x="1448" y="1122" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="1138" y1="1127" x2="1452" y2="1127" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1139" font-family="Inter, monospace" font-size="11" fill="#0E2233">remarks</text>
+<text x="1448" y="1139" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(500)</text>
+<line x1="1138" y1="1144" x2="1452" y2="1144" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1156" font-family="Inter, monospace" font-size="11" fill="#0E2233">created_at</text>
+<text x="1448" y="1156" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+<g><rect x="1130" y="1200" width="330" height="240" rx="6" fill="#ffffff" stroke="#0E2233" stroke-width="1.5"/>
+<rect x="1130" y="1200" width="330" height="30" rx="6" fill="#0E2233"/>
+<rect x="1130" y="1224" width="330" height="6" fill="#0E2233"/>
+<text x="1142" y="1220" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#ffffff">placements</text>
+<text x="1142" y="1243" font-family="Inter, monospace" font-size="11" fill="#0E2233">placement_id</text>
+<text x="1342" y="1243" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#E8A317">PK</text>
+<text x="1448" y="1243" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="1248" x2="1452" y2="1248" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1260" font-family="Inter, monospace" font-size="11" fill="#0E2233">candidate_id</text>
+<text x="1342" y="1260" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1448" y="1260" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="1265" x2="1452" y2="1265" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1277" font-family="Inter, monospace" font-size="11" fill="#0E2233">company_id</text>
+<text x="1342" y="1277" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1448" y="1277" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="1282" x2="1452" y2="1282" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1294" font-family="Inter, monospace" font-size="11" fill="#0E2233">job_id</text>
+<text x="1342" y="1294" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK</text>
+<text x="1448" y="1294" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="1299" x2="1452" y2="1299" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1311" font-family="Inter, monospace" font-size="11" fill="#0E2233">offer_id</text>
+<text x="1342" y="1311" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0FA3A3">FK·UK</text>
+<text x="1448" y="1311" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">INT</text>
+<line x1="1138" y1="1316" x2="1452" y2="1316" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1328" font-family="Inter, monospace" font-size="11" fill="#0E2233">designation</text>
+<text x="1448" y="1328" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(120)</text>
+<line x1="1138" y1="1333" x2="1452" y2="1333" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1345" font-family="Inter, monospace" font-size="11" fill="#0E2233">final_package_lpa</text>
+<text x="1448" y="1345" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DECIMAL(6,2)</text>
+<line x1="1138" y1="1350" x2="1452" y2="1350" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1362" font-family="Inter, monospace" font-size="11" fill="#0E2233">expected_joining_date</text>
+<text x="1448" y="1362" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATE</text>
+<line x1="1138" y1="1367" x2="1452" y2="1367" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1379" font-family="Inter, monospace" font-size="11" fill="#0E2233">actual_joining_date</text>
+<text x="1448" y="1379" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATE</text>
+<line x1="1138" y1="1384" x2="1452" y2="1384" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1396" font-family="Inter, monospace" font-size="11" fill="#0E2233">joining_status</text>
+<text x="1448" y="1396" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="1138" y1="1401" x2="1452" y2="1401" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1413" font-family="Inter, monospace" font-size="11" fill="#0E2233">placement_status</text>
+<text x="1448" y="1413" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">VARCHAR(20)</text>
+<line x1="1138" y1="1418" x2="1452" y2="1418" stroke="#eee" stroke-width="1"/>
+<text x="1142" y="1430" font-family="Inter, monospace" font-size="11" fill="#0E2233">created_at</text>
+<text x="1448" y="1430" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="end">DATETIME</text>
+</g>
+</svg>
+  </div>
+  <div class="cols">
+    <div class="card"><h2>Users &amp; roles</h2><p>One <b>role</b> has many <b>users</b>. Users post jobs, are assigned as recruiters on applications, record status changes, submit interview feedback and generate activity logs.</p></div>
+    <div class="card"><h2>Candidates &amp; skills</h2><p>A <b>candidate</b> has many <b>candidate_skills</b>; a <b>skill</b> appears in many of them. One skill per candidate is flagged <b>is_primary</b>.</p></div>
+    <div class="card"><h2>Companies &amp; jobs</h2><p>A <b>company</b> posts many <b>jobs</b>. A <b>job</b> requires many <b>job_skills</b>; a <b>skill</b> is required by many jobs. <b>mandatory_flag</b> marks must-have skills.</p></div>
+    <div class="card"><h2>The pipeline</h2><p><b>Candidate &rarr; application &rarr; interview round &rarr; feedback &rarr; offer &rarr; placement.</b> Each (candidate, job) pair applies once; each interview gets one feedback; each application gets at most one offer, and each offer at most one placement.</p></div>
+    <div class="card"><h2>History &amp; audit</h2><p>Every status change writes one row to <b>application_history</b> (append-only). <b>activity_logs</b> records who did what, in which module.</p></div>
+    <div class="card"><h2>Lookups</h2><p><b>qualifications</b> and <b>locations</b> are standalone master tables for dropdown values, so the same qualification or city is never typed two different ways.</p></div>
+  </div>
+  <p class="note"><b>Note:</b> this diagram matches <code>sql/database_schema.sql</code> — the same 17 tables, columns, primary keys, unique keys, foreign keys and CHECK rules. The written version with a full relationship table is in <code>docs/er-diagram.md</code> (Mermaid), and every column is described in <code>docs/data-dictionary.md</code>.</p>
+</main>
+<footer>Recruitment &amp; Placement Management System — student internship project. Diagram generated as a single standalone HTML file; the only external resource is Google Fonts.</footer>
+</body>
+</html>

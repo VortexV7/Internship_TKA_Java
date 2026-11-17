@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interviews — RecruitPlace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar-backdrop hidden" id="sidebar-backdrop"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo-mark">RP</div><div><h1>RecruitPlace</h1><small>Placement Cell</small></div></div>
+  <nav class="nav">
+    <a href="index.html" data-page="index.html"><span class="ico">▦</span> Dashboard</a>
+    <a href="candidates.html" data-page="candidates.html"><span class="ico">👤</span> Candidates</a>
+    <a href="companies.html" data-page="companies.html"><span class="ico">🏢</span> Companies</a>
+    <a href="jobs.html" data-page="jobs.html"><span class="ico">💼</span> Jobs</a>
+    <a href="applications.html" data-page="applications.html"><span class="ico">📄</span> Applications</a>
+    <a href="interviews.html" data-page="interviews.html"><span class="ico">🎙</span> Interviews</a>
+    <a href="offers.html" data-page="offers.html"><span class="ico">✉</span> Offers</a>
+    <a href="placements.html" data-page="placements.html"><span class="ico">🎓</span> Placements</a>
+    <a href="reports.html" data-page="reports.html"><span class="ico">📊</span> Reports</a>
+  </nav>
+  <div class="sidebar-user"><div class="avatar">PO</div><div class="who"><strong>Placement Officer</strong><span>placement@college.edu</span></div><a class="logout" href="login.html">Logout</a></div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    <h2>Interviews</h2><div class="spacer"></div>
+    <label class="search"><span aria-hidden="true">🔍</span><input type="search" placeholder="Search interviews…" data-filter aria-label="Search interviews"></label>
+    <a class="btn btn-amber" href="candidates.html"><span>＋</span> <span class="btn-label">New Candidate</span></a>
+  </header>
+  <main class="content">
+    <p class="page-sub">Interview rounds scheduled and completed in this drive. Ratings are on a 1–5 scale.</p>
+    <section class="card">
+      <div class="table-wrap"><table>
+        <thead><tr><th>Candidate</th><th>Job</th><th>Round</th><th>Type</th><th>Date &amp; Time</th><th>Mode</th><th>Interviewer</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="name">Meera Nambiar</strong></td><td>Java Developer · TCS</td><td>Round 1</td><td>Aptitude</td><td>06 Apr 2026, 10:00 AM</td><td>Online</td><td>Amit Desai</td><td><span class="pill pill-amber">SCHEDULED</span></td></tr>
+          <tr><td><strong class="name">Rahul Saxena</strong></td><td>Python Developer · Infosys</td><td>Round 1</td><td>Aptitude</td><td>06 Apr 2026, 11:00 AM</td><td>Online</td><td>Neha Sharma</td><td><span class="pill pill-amber">SCHEDULED</span></td></tr>
+          <tr><td><strong class="name">Pooja Menon</strong></td><td>QA Engineer · Cognizant</td><td>Round 1</td><td>Technical</td><td>07 Apr 2026, 10:30 AM</td><td>Offline</td><td>Rahul Verma</td><td><span class="pill pill-amber">SCHEDULED</span></td></tr>
+          <tr><td><strong class="name">Aman Qureshi</strong></td><td>Python Developer · Infosys</td><td>Round 1</td><td>Aptitude</td><td>07 Apr 2026, 2:00 PM</td><td>Online</td><td>Pooja Singh</td><td><span class="pill pill-amber">SCHEDULED</span></td></tr>
+          <tr><td><strong class="name">Nisha Yadav</strong></td><td>Software Engineer Trainee · Capgemini</td><td>Round 1</td><td>Aptitude</td><td>10 Mar 2026, 10:00 AM</td><td>Online</td><td>Amit Desai</td><td><span class="pill pill-green">COMPLETED</span></td></tr>
+          <tr><td><strong class="name">Nisha Yadav</strong></td><td>Software Engineer Trainee · Capgemini</td><td>Round 2</td><td>Technical</td><td>14 Mar 2026, 11:00 AM</td><td>Online</td><td>Sanjay Patel</td><td><span class="pill pill-green">COMPLETED</span></td></tr>
+          <tr><td><strong class="name">Kabir Anand</strong></td><td>QA Engineer · Cognizant</td><td>Round 1</td><td>Aptitude</td><td>10 Mar 2026, 10:00 AM</td><td>Online</td><td>Neha Sharma</td><td><span class="pill pill-green">COMPLETED</span></td></tr>
+          <tr><td><strong class="name">Kabir Anand</strong></td><td>QA Engineer · Cognizant</td><td>Round 2</td><td>Technical</td><td>15 Mar 2026, 10:30 AM</td><td>Offline</td><td>Rahul Verma</td><td><span class="pill pill-green">COMPLETED</span></td></tr>
+          <tr><td><strong class="name">Zara Hussain</strong></td><td>Full Stack Developer · Tech Mahindra</td><td>Round 1</td><td>Technical</td><td>12 Mar 2026, 9:30 AM</td><td>Online</td><td>Vikram Rao</td><td><span class="pill pill-green">COMPLETED</span></td></tr>
+          <tr><td><strong class="name">Zara Hussain</strong></td><td>Full Stack Developer · Tech Mahindra</td><td>Round 2</td><td>Managerial</td><td>08 Apr 2026, 3:00 PM</td><td>Online</td><td>Anita Nair</td><td><span class="pill pill-amber">SCHEDULED</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="card">
+      <h3>Feedback Summary</h3>
+      <p class="hint">Average interviewer ratings for completed rounds (1–5 scale, demo data)</p>
+      <div class="bar-row"><span class="bname">Rohan Patil</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#0FA3A3"></div></div><span class="funnel-num">5.0</span></div>
+      <div class="bar-row"><span class="bname">Sneha Kulkarni</span><div class="bar-track"><div class="bar-fill" style="width:90%;background:#0FA3A3"></div></div><span class="funnel-num">4.5</span></div>
+      <div class="bar-row"><span class="bname">Rohan Patil</span><div class="bar-track"><div class="bar-fill" style="width:90%;background:#0FA3A3"></div></div><span class="funnel-num">4.5</span></div>
+      <div class="bar-row"><span class="bname">Riya Gupta</span><div class="bar-track"><div class="bar-fill" style="width:90%;background:#0FA3A3"></div></div><span class="funnel-num">4.5</span></div>
+      <div class="bar-row"><span class="bname">Nisha Yadav</span><div class="bar-track"><div class="bar-fill" style="width:90%;background:#0FA3A3"></div></div><span class="funnel-num">4.5</span></div>
+      <p class="sub" style="margin-top:10px">Strongest area across completed rounds: <strong>core Java / Python fundamentals</strong>. Most common note: “revise SQL joins before the next round.”</p>
+    </section>
+  </main>
+  <footer class="footer"><strong>RecruitPlace — Placement Cell</strong> · UI Prototype — not connected to the Java backend</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

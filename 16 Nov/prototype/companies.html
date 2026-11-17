@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Companies — RecruitPlace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar-backdrop hidden" id="sidebar-backdrop"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo-mark">RP</div><div><h1>RecruitPlace</h1><small>Placement Cell</small></div></div>
+  <nav class="nav">
+    <a href="index.html" data-page="index.html"><span class="ico">▦</span> Dashboard</a>
+    <a href="candidates.html" data-page="candidates.html"><span class="ico">👤</span> Candidates</a>
+    <a href="companies.html" data-page="companies.html"><span class="ico">🏢</span> Companies</a>
+    <a href="jobs.html" data-page="jobs.html"><span class="ico">💼</span> Jobs</a>
+    <a href="applications.html" data-page="applications.html"><span class="ico">📄</span> Applications</a>
+    <a href="interviews.html" data-page="interviews.html"><span class="ico">🎙</span> Interviews</a>
+    <a href="offers.html" data-page="offers.html"><span class="ico">✉</span> Offers</a>
+    <a href="placements.html" data-page="placements.html"><span class="ico">🎓</span> Placements</a>
+    <a href="reports.html" data-page="reports.html"><span class="ico">📊</span> Reports</a>
+  </nav>
+  <div class="sidebar-user"><div class="avatar">PO</div><div class="who"><strong>Placement Officer</strong><span>placement@college.edu</span></div><a class="logout" href="login.html">Logout</a></div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    <h2>Companies</h2><div class="spacer"></div>
+    <label class="search"><span aria-hidden="true">🔍</span><input type="search" placeholder="Search companies…" data-filter aria-label="Search companies"></label>
+    <a class="btn btn-amber" href="candidates.html"><span>＋</span> <span class="btn-label">New Candidate</span></a>
+  </header>
+  <main class="content">
+    <p class="page-sub">8 recruiting companies in this drive. HR contact name and email are shown for each company.</p>
+    <div class="company-grid">
+      <article class="company-card"><div class="c-logo">TCS</div><h3>TCS</h3><p class="meta"><b>Code:</b> COM-001<br><b>Industry:</b> IT Services<br><b>Location:</b> Mumbai<br><b>Type:</b> MNC<br><b>HR:</b> Rajesh Kumar · hr.recruitment@tcs.com</p><div class="foot"><span class="pill pill-teal">2 open jobs</span><a href="jobs.html">View jobs →</a></div></article>
+      <article class="company-card"><div class="c-logo">INF</div><h3>Infosys</h3><p class="meta"><b>Code:</b> COM-002<br><b>Industry:</b> IT Services<br><b>Location:</b> Pune<br><b>Type:</b> MNC<br><b>HR:</b> Sunita Patel · hr.careers@infosys.com</p><div class="foot"><span class="pill pill-teal">2 open jobs</span><a href="jobs.html">View jobs →</a></div></article>
+      <article class="company-card"><div class="c-logo">WIP</div><h3>Wipro</h3><p class="meta"><b>Code:</b> COM-003<br><b>Industry:</b> IT Services<br><b>Location:</b> Bengaluru<br><b>Type:</b> MNC<br><b>HR:</b> Manoj Iyer · hr.talent@wipro.com</p><div class="foot"><span class="pill pill-teal">1 open job</span><a href="jobs.html">View jobs →</a></div></article>
+      <article class="company-card"><div class="c-logo">ACC</div><h3>Accenture</h3><p class="meta"><b>Code:</b> COM-004<br><b>Industry:</b> Consulting<br><b>Location:</b> Mumbai<br><b>Type:</b> MNC<br><b>HR:</b> Kavita Menon · hr.india@accenture.com</p><div class="foot"><span class="pill pill-teal">1 open job</span><a href="jobs.html">View jobs →</a></div></article>
+      <article class="company-card"><div class="c-logo">CAP</div><h3>Capgemini</h3><p class="meta"><b>Code:</b> COM-005<br><b>Industry:</b> IT Services<br><b>Location:</b> Pune<br><b>Type:</b> MNC<br><b>HR:</b> Arvind Nair · hr.hiring@capgemini.com</p><div class="foot"><span class="pill pill-teal">1 open job</span><a href="jobs.html">View jobs →</a></div></article>
+      <article class="company-card"><div class="c-logo">COG</div><h3>Cognizant</h3><p class="meta"><b>Code:</b> COM-006<br><b>Industry:</b> IT Services<br><b>Location:</b> Chennai<br><b>Type:</b> MNC<br><b>HR:</b> Divya Rao · hr.recruit@cognizant.com</p><div class="foot"><span class="pill pill-teal">1 open job</span><a href="jobs.html">View jobs →</a></div></article>
+      <article class="company-card"><div class="c-logo">TM</div><h3>Tech Mahindra</h3><p class="meta"><b>Code:</b> COM-007<br><b>Industry:</b> IT Services<br><b>Location:</b> Hyderabad<br><b>Type:</b> MNC<br><b>HR:</b> Suresh Reddy · hr.campus@techmahindra.com</p><div class="foot"><span class="pill pill-teal">1 open job</span><a href="jobs.html">View jobs →</a></div></article>
+      <article class="company-card"><div class="c-logo">HCL</div><h3>HCLTech</h3><p class="meta"><b>Code:</b> COM-008<br><b>Industry:</b> IT Services<br><b>Location:</b> Nagpur<br><b>Type:</b> MNC<br><b>HR:</b> Pooja Deshmukh · hr.nagpur@hcltech.com</p><div class="foot"><span class="pill pill-teal">1 open job</span><a href="jobs.html">View jobs →</a></div></article>
+    </div>
+    <section class="card">
+      <h3>All Companies</h3>
+      <p class="hint">Tabular view of the same 8 companies</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Code</th><th>Company</th><th>Industry</th><th>Location</th><th>Type</th><th>HR Contact</th><th>Open Jobs</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">COM-001</td><td><strong class="name">TCS</strong></td><td>IT Services</td><td>Mumbai</td><td>MNC</td><td>careers@tcs.example</td><td>2</td></tr>
+          <tr><td class="mono">COM-002</td><td><strong class="name">Infosys</strong></td><td>IT Services</td><td>Pune</td><td>MNC</td><td>hiring@infosys.example</td><td>2</td></tr>
+          <tr><td class="mono">COM-003</td><td><strong class="name">Wipro</strong></td><td>IT Services</td><td>Bengaluru</td><td>MNC</td><td>talent@wipro.example</td><td>1</td></tr>
+          <tr><td class="mono">COM-004</td><td><strong class="name">Accenture</strong></td><td>Consulting</td><td>Mumbai</td><td>MNC</td><td>recruit@accenture.example</td><td>1</td></tr>
+          <tr><td class="mono">COM-005</td><td><strong class="name">Capgemini</strong></td><td>IT Services</td><td>Pune</td><td>MNC</td><td>careers@capgemini.example</td><td>1</td></tr>
+          <tr><td class="mono">COM-006</td><td><strong class="name">Cognizant</strong></td><td>IT Services</td><td>Chennai</td><td>MNC</td><td>hiring@cognizant.example</td><td>1</td></tr>
+          <tr><td class="mono">COM-007</td><td><strong class="name">Tech Mahindra</strong></td><td>IT Services</td><td>Hyderabad</td><td>MNC</td><td>campus@techmahindra.example</td><td>1</td></tr>
+          <tr><td class="mono">COM-008</td><td><strong class="name">HCLTech</strong></td><td>IT Services</td><td>Nagpur</td><td>MNC</td><td>careers@hcltech.example</td><td>1</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </main>
+  <footer class="footer"><strong>RecruitPlace — Placement Cell</strong> · UI Prototype — not connected to the Java backend</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

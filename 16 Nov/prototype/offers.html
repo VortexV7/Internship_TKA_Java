@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offers — RecruitPlace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar-backdrop hidden" id="sidebar-backdrop"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo-mark">RP</div><div><h1>RecruitPlace</h1><small>Placement Cell</small></div></div>
+  <nav class="nav">
+    <a href="index.html" data-page="index.html"><span class="ico">▦</span> Dashboard</a>
+    <a href="candidates.html" data-page="candidates.html"><span class="ico">👤</span> Candidates</a>
+    <a href="companies.html" data-page="companies.html"><span class="ico">🏢</span> Companies</a>
+    <a href="jobs.html" data-page="jobs.html"><span class="ico">💼</span> Jobs</a>
+    <a href="applications.html" data-page="applications.html"><span class="ico">📄</span> Applications</a>
+    <a href="interviews.html" data-page="interviews.html"><span class="ico">🎙</span> Interviews</a>
+    <a href="offers.html" data-page="offers.html"><span class="ico">✉</span> Offers</a>
+    <a href="placements.html" data-page="placements.html"><span class="ico">🎓</span> Placements</a>
+    <a href="reports.html" data-page="reports.html"><span class="ico">📊</span> Reports</a>
+  </nav>
+  <div class="sidebar-user"><div class="avatar">PO</div><div class="who"><strong>Placement Officer</strong><span>placement@college.edu</span></div><a class="logout" href="login.html">Logout</a></div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    <h2>Offers</h2><div class="spacer"></div>
+    <label class="search"><span aria-hidden="true">🔍</span><input type="search" placeholder="Search offers…" data-filter aria-label="Search offers"></label>
+    <a class="btn btn-amber" href="candidates.html"><span>＋</span> <span class="btn-label">New Candidate</span></a>
+  </header>
+  <main class="content">
+    <p class="page-sub">9 offers issued in this drive — 6 accepted, 3 offered.</p>
+    <section class="card">
+      <div class="table-wrap"><table>
+        <thead><tr><th>Offer Code</th><th>Candidate</th><th>Company</th><th>Designation</th><th>Package</th><th>Offer Date</th><th>Joining Date</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">OFF-2026-001</td><td><strong class="name">Rohan Patil</strong></td><td>Infosys</td><td>Business Analyst</td><td><strong>7 LPA</strong></td><td>20 Mar 2026</td><td>15 Apr 2026</td><td><span class="pill pill-amber">OFFERED</span></td></tr>
+          <tr><td class="mono">OFF-2026-002</td><td><strong class="name">Sneha Kulkarni</strong></td><td>TCS</td><td>Java Developer</td><td><strong>5.5 LPA</strong></td><td>21 Mar 2026</td><td>20 Apr 2026</td><td><span class="pill pill-amber">OFFERED</span></td></tr>
+          <tr><td class="mono">OFF-2026-003</td><td><strong class="name">Riya Gupta</strong></td><td>Infosys</td><td>Business Analyst</td><td><strong>7 LPA</strong></td><td>24 Mar 2026</td><td>01 May 2026</td><td><span class="pill pill-green">ACCEPTED</span></td></tr>
+          <tr><td class="mono">OFF-2026-004</td><td><strong class="name">Karan Malhotra</strong></td><td>TCS</td><td>Java Developer</td><td><strong>5 LPA</strong></td><td>24 Mar 2026</td><td>25 Apr 2026</td><td><span class="pill pill-amber">OFFERED</span></td></tr>
+          <tr><td class="mono">OFF-2026-005</td><td><strong class="name">Aarav Sharma</strong></td><td>Infosys</td><td>Python Developer</td><td><strong>5 LPA</strong></td><td>26 Mar 2026</td><td>10 Apr 2026</td><td><span class="pill pill-green">ACCEPTED</span></td></tr>
+          <tr><td class="mono">OFF-2026-006</td><td><strong class="name">Ananya Deshmukh</strong></td><td>Wipro</td><td>Frontend Developer (React)</td><td><strong>4.5 LPA</strong></td><td>27 Mar 2026</td><td>10 Apr 2026</td><td><span class="pill pill-green">ACCEPTED</span></td></tr>
+          <tr><td class="mono">OFF-2026-007</td><td><strong class="name">Rohan Patil</strong></td><td>Capgemini</td><td>Software Engineer Trainee</td><td><strong>4 LPA</strong></td><td>28 Mar 2026</td><td>15 Apr 2026</td><td><span class="pill pill-green">ACCEPTED</span></td></tr>
+          <tr><td class="mono">OFF-2026-008</td><td><strong class="name">Sneha Kulkarni</strong></td><td>Tech Mahindra</td><td>Full Stack Developer</td><td><strong>7.5 LPA</strong></td><td>29 Mar 2026</td><td>15 Apr 2026</td><td><span class="pill pill-green">ACCEPTED</span></td></tr>
+          <tr><td class="mono">OFF-2026-009</td><td><strong class="name">Vikram Joshi</strong></td><td>Infosys</td><td>Business Analyst</td><td><strong>8.5 LPA</strong></td><td>30 Mar 2026</td><td>20 Apr 2026</td><td><span class="pill pill-green">ACCEPTED</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </main>
+  <footer class="footer"><strong>RecruitPlace — Placement Cell</strong> · UI Prototype — not connected to the Java backend</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

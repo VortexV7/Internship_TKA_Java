@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports — RecruitPlace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar-backdrop hidden" id="sidebar-backdrop"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo-mark">RP</div><div><h1>RecruitPlace</h1><small>Placement Cell</small></div></div>
+  <nav class="nav">
+    <a href="index.html" data-page="index.html"><span class="ico">▦</span> Dashboard</a>
+    <a href="candidates.html" data-page="candidates.html"><span class="ico">👤</span> Candidates</a>
+    <a href="companies.html" data-page="companies.html"><span class="ico">🏢</span> Companies</a>
+    <a href="jobs.html" data-page="jobs.html"><span class="ico">💼</span> Jobs</a>
+    <a href="applications.html" data-page="applications.html"><span class="ico">📄</span> Applications</a>
+    <a href="interviews.html" data-page="interviews.html"><span class="ico">🎙</span> Interviews</a>
+    <a href="offers.html" data-page="offers.html"><span class="ico">✉</span> Offers</a>
+    <a href="placements.html" data-page="placements.html"><span class="ico">🎓</span> Placements</a>
+    <a href="reports.html" data-page="reports.html"><span class="ico">📊</span> Reports</a>
+  </nav>
+  <div class="sidebar-user"><div class="avatar">PO</div><div class="who"><strong>Placement Officer</strong><span>placement@college.edu</span></div><a class="logout" href="login.html">Logout</a></div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    <h2>Reports</h2><div class="spacer"></div>
+    <label class="search"><span aria-hidden="true">🔍</span><input type="search" placeholder="Search reports…" data-filter aria-label="Search reports"></label>
+    <a class="btn btn-amber" href="candidates.html"><span>＋</span> <span class="btn-label">New Candidate</span></a>
+  </header>
+  <main class="content">
+    <p class="page-sub">Six standard placement reports. All figures below are demo data — the same sample data used across this prototype.</p>
+    <div class="report-grid">
+      <section class="report-card">
+        <h3>1 · Candidates by Technology</h3>
+        <p class="hint">Registered candidates grouped by primary technology (of 30)</p>
+        <div class="bar-row"><span class="bname">Java</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#0E2233"></div></div><span class="funnel-num">10</span></div>
+        <div class="bar-row"><span class="bname">Python</span><div class="bar-track"><div class="bar-fill" style="width:60%;background:#0FA3A3"></div></div><span class="funnel-num">6</span></div>
+        <div class="bar-row"><span class="bname">React</span><div class="bar-track"><div class="bar-fill" style="width:50%;background:#E8A317"></div></div><span class="funnel-num">5</span></div>
+        <div class="bar-row"><span class="bname">SQL</span><div class="bar-track"><div class="bar-fill" style="width:50%;background:#0FA3A3"></div></div><span class="funnel-num">5</span></div>
+        <div class="bar-row"><span class="bname">JavaScript</span><div class="bar-track"><div class="bar-fill" style="width:40%;background:#5B6B7A"></div></div><span class="funnel-num">4</span></div>
+      </section>
+
+      <section class="report-card">
+        <h3>2 · Open Jobs</h3>
+        <p class="hint">Jobs currently open for applications (10 of 12)</p>
+        <div class="table-wrap"><table style="min-width:0">
+          <thead><tr><th>Job</th><th>Company</th><th>Openings</th></tr></thead>
+          <tbody>
+            <tr><td>Java Developer</td><td>TCS</td><td>5</td></tr>
+            <tr><td>Python Developer</td><td>Infosys</td><td>4</td></tr>
+            <tr><td>Frontend Developer (React)</td><td>Wipro</td><td>6</td></tr>
+            <tr><td>SQL / Data Analyst</td><td>Accenture</td><td>3</td></tr>
+            <tr><td>Software Engineer Trainee</td><td>Capgemini</td><td>10</td></tr>
+        </tbody>
+        </table></div>
+        <p class="sub" style="margin-top:10px">Plus 5 more open jobs — see the <a href="jobs.html">Jobs page</a> for the full list.</p>
+      </section>
+
+      <section class="report-card">
+        <h3>3 · Applications by Status</h3>
+        <p class="hint">45 applications in this drive</p>
+        <div class="bar-row"><span class="bname">Applied</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#E8A317"></div></div><span class="funnel-num">8</span></div>
+        <div class="bar-row"><span class="bname">Rejected</span><div class="bar-track"><div class="bar-fill" style="width:75%;background:#C0392B"></div></div><span class="funnel-num">6</span></div>
+        <div class="bar-row"><span class="bname">Shortlisted</span><div class="bar-track"><div class="bar-fill" style="width:62%;background:#0E2233"></div></div><span class="funnel-num">5</span></div>
+        <div class="bar-row"><span class="bname">Eligibility Verified</span><div class="bar-track"><div class="bar-fill" style="width:62%;background:#0FA3A3"></div></div><span class="funnel-num">5</span></div>
+        <div class="bar-row"><span class="bname">Joined</span><div class="bar-track"><div class="bar-fill" style="width:62%;background:#1E8A4C"></div></div><span class="funnel-num">5</span></div>
+      </section>
+
+      <section class="report-card">
+        <h3>4 · Company-wise Placements</h3>
+        <p class="hint">Confirmed placements per company</p>
+        <div class="table-wrap"><table style="min-width:0">
+          <thead><tr><th>Company</th><th>Placed</th><th>Avg Package</th></tr></thead>
+          <tbody>
+            <tr><td>Infosys</td><td>2</td><td>6.75 LPA</td></tr>
+            <tr><td>Wipro</td><td>1</td><td>4.50 LPA</td></tr>
+            <tr><td>Capgemini</td><td>1</td><td>4.00 LPA</td></tr>
+            <tr><td>Tech Mahindra</td><td>1</td><td>7.50 LPA</td></tr>
+        </tbody>
+        </table></div>
+      </section>
+
+      <section class="report-card">
+        <h3>5 · Placed Candidates</h3>
+        <p class="hint">Candidates with a confirmed placement (5)</p>
+        <div class="table-wrap"><table style="min-width:0">
+          <thead><tr><th>Candidate</th><th>Company</th><th>Package</th></tr></thead>
+          <tbody>
+            <tr><td>Aarav Sharma</td><td>Infosys</td><td>5 LPA</td></tr>
+            <tr><td>Ananya Deshmukh</td><td>Wipro</td><td>4.5 LPA</td></tr>
+            <tr><td>Rohan Patil</td><td>Capgemini</td><td>4 LPA</td></tr>
+            <tr><td>Sneha Kulkarni</td><td>Tech Mahindra</td><td>7.5 LPA</td></tr>
+            <tr><td>Vikram Joshi</td><td>Infosys</td><td>8.5 LPA</td></tr>
+        </tbody>
+        </table></div>
+      </section>
+
+      <section class="report-card">
+        <h3>6 · Unplaced Candidates</h3>
+        <p class="hint">Active candidates still awaiting placement (25 of 30)</p>
+        <div class="bar-row"><span class="bname">Java</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#0E2233"></div></div><span class="funnel-num">8</span></div>
+        <div class="bar-row"><span class="bname">Python</span><div class="bar-track"><div class="bar-fill" style="width:62%;background:#0FA3A3"></div></div><span class="funnel-num">5</span></div>
+        <div class="bar-row"><span class="bname">React</span><div class="bar-track"><div class="bar-fill" style="width:50%;background:#E8A317"></div></div><span class="funnel-num">4</span></div>
+        <div class="bar-row"><span class="bname">SQL</span><div class="bar-track"><div class="bar-fill" style="width:50%;background:#0FA3A3"></div></div><span class="funnel-num">4</span></div>
+        <div class="bar-row"><span class="bname">JavaScript</span><div class="bar-track"><div class="bar-fill" style="width:50%;background:#5B6B7A"></div></div><span class="funnel-num">4</span></div>
+        <p class="sub" style="margin-top:10px">Includes Priya Nair (58.00%) — below the 60% minimum for most open jobs; focus on the SQL / Data Analyst and Support Engineer roles (55% minimum).</p>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"><strong>RecruitPlace — Placement Cell</strong> · UI Prototype — not connected to the Java backend</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

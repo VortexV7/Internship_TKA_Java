@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jobs — RecruitPlace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar-backdrop hidden" id="sidebar-backdrop"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo-mark">RP</div><div><h1>RecruitPlace</h1><small>Placement Cell</small></div></div>
+  <nav class="nav">
+    <a href="index.html" data-page="index.html"><span class="ico">▦</span> Dashboard</a>
+    <a href="candidates.html" data-page="candidates.html"><span class="ico">👤</span> Candidates</a>
+    <a href="companies.html" data-page="companies.html"><span class="ico">🏢</span> Companies</a>
+    <a href="jobs.html" data-page="jobs.html"><span class="ico">💼</span> Jobs</a>
+    <a href="applications.html" data-page="applications.html"><span class="ico">📄</span> Applications</a>
+    <a href="interviews.html" data-page="interviews.html"><span class="ico">🎙</span> Interviews</a>
+    <a href="offers.html" data-page="offers.html"><span class="ico">✉</span> Offers</a>
+    <a href="placements.html" data-page="placements.html"><span class="ico">🎓</span> Placements</a>
+    <a href="reports.html" data-page="reports.html"><span class="ico">📊</span> Reports</a>
+  </nav>
+  <div class="sidebar-user"><div class="avatar">PO</div><div class="who"><strong>Placement Officer</strong><span>placement@college.edu</span></div><a class="logout" href="login.html">Logout</a></div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    <h2>Jobs</h2><div class="spacer"></div>
+    <label class="search"><span aria-hidden="true">🔍</span><input type="search" placeholder="Search jobs…" data-filter aria-label="Search jobs"></label>
+    <a class="btn btn-amber" href="candidates.html"><span>＋</span> <span class="btn-label">New Candidate</span></a>
+  </header>
+  <main class="content">
+    <p class="page-sub">12 jobs in this drive — 10 open, 1 closed, 1 draft. Filter by title, company or location.</p>
+    <div class="toolbar">
+      <input class="filter-input" type="search" placeholder="Filter jobs by title, company, location…" data-filter data-filter-target="#jobs-table tbody" aria-label="Filter jobs">
+      <div class="chips" data-chip-group data-chip-target="#jobs-table tbody">
+        <button type="button" class="chip active" data-filter-value="all">All</button>
+        <button type="button" class="chip" data-filter-value="open">Open</button>
+        <button type="button" class="chip" data-filter-value="closed">Closed</button>
+        <button type="button" class="chip" data-filter-value="draft">Draft</button>
+      </div>
+    </div>
+    <section class="card">
+      <div class="table-wrap"><table id="jobs-table">
+        <thead><tr><th>Job Code</th><th>Title</th><th>Company</th><th>Location</th><th>Openings</th><th>Package</th><th>Min %</th><th>Passing Year</th><th>Max Backlogs</th><th>Deadline</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">JOB-2026-001</td><td><strong class="name">Java Developer</strong></td><td>TCS</td><td>Mumbai</td><td>5</td><td>4.5–6 LPA</td><td>60%</td><td>2024–2026</td><td>0</td><td>31 Mar 2026</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-002</td><td><strong class="name">Python Developer</strong></td><td>Infosys</td><td>Pune</td><td>4</td><td>4–5.5 LPA</td><td>60%</td><td>2024–2026</td><td>1</td><td>15 Apr 2026</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-003</td><td><strong class="name">Frontend Developer (React)</strong></td><td>Wipro</td><td>Bengaluru</td><td>6</td><td>3.5–5 LPA</td><td>55%</td><td>2025–2026</td><td>1</td><td>30 Apr 2026</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-004</td><td><strong class="name">SQL / Data Analyst</strong></td><td>Accenture</td><td>Mumbai</td><td>3</td><td>5–7 LPA</td><td>65%</td><td>2024–2026</td><td>0</td><td>31 Mar 2026</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-005</td><td><strong class="name">Software Engineer Trainee</strong></td><td>Capgemini</td><td>Pune</td><td>10</td><td>3.5–4.5 LPA</td><td>60%</td><td>2025–2026</td><td>0</td><td>15 May 2026</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-006</td><td><strong class="name">QA Engineer</strong></td><td>Cognizant</td><td>Chennai</td><td>4</td><td>3–4.5 LPA</td><td>55%</td><td>2024–2026</td><td>1</td><td>30 Apr 2026</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-007</td><td><strong class="name">Full Stack Developer</strong></td><td>Tech Mahindra</td><td>Hyderabad</td><td>3</td><td>5.5–8 LPA</td><td>65%</td><td>2024–2025</td><td>0</td><td>31 May 2026</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-008</td><td><strong class="name">Support Engineer</strong></td><td>HCLTech</td><td>Nagpur</td><td>8</td><td>3–4 LPA</td><td>55%</td><td>2024–2026</td><td>1</td><td>15 Apr 2026</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-009</td><td><strong class="name">DevOps Trainee</strong></td><td>TCS</td><td>Pune</td><td>2</td><td>4–5 LPA</td><td>60%</td><td>2025–2026</td><td>0</td><td>31 May 2026</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-010</td><td><strong class="name">Business Analyst</strong></td><td>Infosys</td><td>Mumbai</td><td>2</td><td>6–9.5 LPA</td><td>65%</td><td>2024–2026</td><td>0</td><td>15 May 2026</td><td><span class="pill pill-teal">OPEN</span></td></tr>
+          <tr><td class="mono">JOB-2026-011</td><td><strong class="name">Java Backend Developer</strong></td><td>Wipro</td><td>Bengaluru</td><td>5</td><td>5–7.5 LPA</td><td>60%</td><td>2024–2026</td><td>1</td><td>30 Apr 2026</td><td><span class="pill pill-red">CLOSED</span></td></tr>
+          <tr><td class="mono">JOB-2026-012</td><td><strong class="name">React Developer</strong></td><td>Accenture</td><td>Pune</td><td>4</td><td>5–7 LPA</td><td>60%</td><td>2025–2026</td><td>0</td><td>31 May 2026</td><td><span class="pill pill-amber">DRAFT</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </main>
+  <footer class="footer"><strong>RecruitPlace — Placement Cell</strong> · UI Prototype — not connected to the Java backend</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

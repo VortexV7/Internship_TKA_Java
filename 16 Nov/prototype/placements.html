@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Placements — RecruitPlace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar-backdrop hidden" id="sidebar-backdrop"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo-mark">RP</div><div><h1>RecruitPlace</h1><small>Placement Cell</small></div></div>
+  <nav class="nav">
+    <a href="index.html" data-page="index.html"><span class="ico">▦</span> Dashboard</a>
+    <a href="candidates.html" data-page="candidates.html"><span class="ico">👤</span> Candidates</a>
+    <a href="companies.html" data-page="companies.html"><span class="ico">🏢</span> Companies</a>
+    <a href="jobs.html" data-page="jobs.html"><span class="ico">💼</span> Jobs</a>
+    <a href="applications.html" data-page="applications.html"><span class="ico">📄</span> Applications</a>
+    <a href="interviews.html" data-page="interviews.html"><span class="ico">🎙</span> Interviews</a>
+    <a href="offers.html" data-page="offers.html"><span class="ico">✉</span> Offers</a>
+    <a href="placements.html" data-page="placements.html"><span class="ico">🎓</span> Placements</a>
+    <a href="reports.html" data-page="reports.html"><span class="ico">📊</span> Reports</a>
+  </nav>
+  <div class="sidebar-user"><div class="avatar">PO</div><div class="who"><strong>Placement Officer</strong><span>placement@college.edu</span></div><a class="logout" href="login.html">Logout</a></div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    <h2>Placements</h2><div class="spacer"></div>
+    <label class="search"><span aria-hidden="true">🔍</span><input type="search" placeholder="Search placements…" data-filter aria-label="Search placements"></label>
+    <a class="btn btn-amber" href="candidates.html"><span>＋</span> <span class="btn-label">New Candidate</span></a>
+  </header>
+  <main class="content">
+    <p class="page-sub">6 placements in this drive — 5 joined, 1 yet to join. Average package 6.08 LPA.</p>
+    <div class="highlight-grid">
+      <div class="highlight"><div class="h-name">Aarav Sharma</div><div class="h-co">Infosys · Pune</div><div class="h-pkg">5 LPA</div><div class="h-role">Python Developer · Joined 10 Apr 2026</div></div>
+      <div class="highlight"><div class="h-name">Ananya Deshmukh</div><div class="h-co">Wipro · Bengaluru</div><div class="h-pkg">4.5 LPA</div><div class="h-role">Frontend Developer (React) · Joined 10 Apr 2026</div></div>
+      <div class="highlight"><div class="h-name">Rohan Patil</div><div class="h-co">Capgemini · Pune</div><div class="h-pkg">4 LPA</div><div class="h-role">Software Engineer Trainee · Joined 15 Apr 2026</div></div>
+      <div class="highlight"><div class="h-name">Sneha Kulkarni</div><div class="h-co">Tech Mahindra · Hyderabad</div><div class="h-pkg">7.5 LPA</div><div class="h-role">Full Stack Developer · Joined 15 Apr 2026</div></div>
+      <div class="highlight"><div class="h-name">Vikram Joshi</div><div class="h-co">Infosys · Pune</div><div class="h-pkg">8.5 LPA</div><div class="h-role">Business Analyst · Joined 20 Apr 2026</div></div>
+    </div>
+    <section class="card">
+      <div class="table-wrap"><table>
+        <thead><tr><th>Candidate</th><th>Company</th><th>Designation</th><th>Package</th><th>Expected Joining</th><th>Actual Joining</th><th>Joining Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="name">Riya Gupta</strong><br><span class="sub">CAN-2026-0012 · 69.80%</span></td><td>Infosys</td><td>Business Analyst</td><td><strong>7 LPA</strong></td><td>01 May 2026</td><td>—</td><td><span class="pill pill-amber">PENDING</span></td></tr>
+          <tr><td><strong class="name">Aarav Sharma</strong><br><span class="sub">CAN-2026-0001 · 87.50%</span></td><td>Infosys</td><td>Python Developer</td><td><strong>5 LPA</strong></td><td>10 Apr 2026</td><td>10 Apr 2026</td><td><span class="pill pill-green">JOINED</span></td></tr>
+          <tr><td><strong class="name">Ananya Deshmukh</strong><br><span class="sub">CAN-2026-0002 · 84.20%</span></td><td>Wipro</td><td>Frontend Developer (React)</td><td><strong>4.5 LPA</strong></td><td>10 Apr 2026</td><td>10 Apr 2026</td><td><span class="pill pill-green">JOINED</span></td></tr>
+          <tr><td><strong class="name">Rohan Patil</strong><br><span class="sub">CAN-2026-0003 · 78.60%</span></td><td>Capgemini</td><td>Software Engineer Trainee</td><td><strong>4 LPA</strong></td><td>15 Apr 2026</td><td>15 Apr 2026</td><td><span class="pill pill-green">JOINED</span></td></tr>
+          <tr><td><strong class="name">Sneha Kulkarni</strong><br><span class="sub">CAN-2026-0004 · 81.30%</span></td><td>Tech Mahindra</td><td>Full Stack Developer</td><td><strong>7.5 LPA</strong></td><td>15 Apr 2026</td><td>15 Apr 2026</td><td><span class="pill pill-green">JOINED</span></td></tr>
+          <tr><td><strong class="name">Vikram Joshi</strong><br><span class="sub">CAN-2026-0005 · 76.40%</span></td><td>Infosys</td><td>Business Analyst</td><td><strong>8.5 LPA</strong></td><td>20 Apr 2026</td><td>20 Apr 2026</td><td><span class="pill pill-green">JOINED</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </main>
+  <footer class="footer"><strong>RecruitPlace — Placement Cell</strong> · UI Prototype — not connected to the Java backend</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
